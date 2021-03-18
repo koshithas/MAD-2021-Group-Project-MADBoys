@@ -30,7 +30,7 @@
             android:drawablePadding="10dp"
             android:ems="10"
             android:focusable="false"
-            android:hint="Search for a Food"
+            android:hint="@string/search_food"
             android:padding="10dp"
             android:textSize="18sp" />
 
