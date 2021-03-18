@@ -5,24 +5,19 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="BURGER"
+        android:label="Burgur King"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PizzaApp">
-        <activity android:name=".Driver_MainActivity">
+        <activity android:name=".edit_product_details"></activity>
+        <activity android:name=".add_product" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Driver_OngoingList"
-            android:label="Ongoing List"
-            android:parentActivityName=".Driver_MainActivity" />
-
-
-
     </application>
 
 </manifest>

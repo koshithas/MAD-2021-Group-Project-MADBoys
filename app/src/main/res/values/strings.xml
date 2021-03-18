@@ -1,29 +1,10 @@
 <resources>
-    <string name="app_name">try4</string>
-    <string name="add">add</string>
-    <string name="view">view</string>
-    <string name="oderid">Order ID</string>
-    <string name="customername">Customer Name</string>
-    <string name="number">Telephone number</string>
-    <string name="address">Address</string>
-    <string name="price">Price</string>
-    <string name="driverid">Driver ID</string>
-    <string name="drivername">Driver Name</string>
-    <string name="complete">Complete?</string>
-    <string name="addDrivertoOngoingOder">Add driver for ongoing oder</string>
-
-    <string name="newdriverid">Driver ID</string>
-    <string name="newdrivername">Driver Name</string>
-    <string name="newdrivernumber">Telephone number</string>
-    <string name="newdriveraddress">Address</string>
-    <string name="newdriverdob">Date of birth</string>
-    <string name="newdrivervehiclenumber">Vehicle number</string>
-    <string name="newdrivervehiclemodel">Vehicle model</string>
-    <string name="newdriveremail">Email</string>
-    <string name="newdriveradd">Add driver to system</string>
-    <string name="newdriverslist">View all drivers</string>
-    <string name="btnnewdriverupdated">Done Upadting</string>
-    <string name="editDriverDetails">Edit Driver Details</string>
-
-
+    <string name="app_name">Pizza App</string>
+    <string name="food_price">Price</string>
+    <string name="food_name">Name</string>
+    <string name="food_type">Type</string>
+    <string name="food_description">Description</string>
+    <string name="search_food">Search for a Food</string>
+    <string name="add_product">ADD NEW PRODUCT</string>
+    <string name="display_label">Text View</string>
 </resources>
