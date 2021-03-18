@@ -5,9 +5,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#fece2f">
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
 
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"/>
+
+
+        <EditText
+            android:id="@+id/food_search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:drawableStart="@drawable/search_icon"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="Search for a Food"
+            android:padding="10dp"
+            android:textSize="18sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            tools:layout_editor_absoluteX="109dp"
+            tools:layout_editor_absoluteY="239dp" />
+
+
+
+
+    </LinearLayout>
 
 
 

@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Pizza App</string>
+    <string name="food_price">Price</string>
+    <string name="food_name">Name</string>
+    <string name="food_type">Type</string>
+    <string name="food_description">Description</string>
+    <string name="search_food">Search for a Food</string>
+    <string name="add_product">ADD NEW PRODUCT</string>
+    <string name="display_label">Text View</string>
 </resources>
