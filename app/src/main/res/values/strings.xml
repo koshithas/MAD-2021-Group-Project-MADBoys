@@ -7,4 +7,6 @@
     <string name="search_food">Search for a Food</string>
     <string name="add_product">ADD NEW PRODUCT</string>
     <string name="display_label">Text View</string>
+    <string name="food_banner">Welcome To Food Store</string>
+
 </resources>
