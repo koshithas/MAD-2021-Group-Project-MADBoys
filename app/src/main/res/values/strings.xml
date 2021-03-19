@@ -1,3 +1,63 @@
 <resources>
+    <!--ui page1-->
     <string name="app_name">Pizza App</string>
+    <string name="text1">DELIVERY DRIVERS</string>
+    <string name="text2">00001:AVISHKA ALWIS</string>
+    <string name="text3">00002:SAVINDU KOSHITHA</string>
+    <string name="text4">00003:SAVISHKA PARNAVITHANGE</string>
+    <string name="text5">00004:KANAKA BANDARA</string>
+    <string name="text6">00005:BASHITHA DE SILVA</string>
+    <string name="text7">00006:KUMARA SANGAKKARA</string>
+    <string name="text8">00007:HASARANGA DE SILVA</string>
+    <string name="text9">00008:MANUJA PERERA</string>
+    <string name="text10">00009:THIKSHILA FERNANDO</string>
+    <string name="text11">00010:KUSAL MENDIS</string>
+    <string name="text12">00011:CHALAKA MENDIS</string>
+
+    <!--ui page2-->
+    <string name="text13">UPDATE DRIVER DETAILS</string>
+    <string name="btn1">UPDATE DETAILS</string>
+    <string name="edit1">Name :</string>
+    <string name="edit2">Age :</string>
+    <string name="edit3">Telephone number :</string>
+    <string name="edit4">Vehicle model :</string>
+    <string name="edit5">DOB :</string>
+    <string name="edit6">Email :</string>
+    <string name="edit7">Vehicle number :</string>
+    <string name="edit8">Address :</string>
+
+
+
+    <!--ui page3-->
+    <string name="text14">BASKET DETAILS</string>
+    <string name="text15">Customer Name : Kanaka Sooriyabandara</string>
+    <string name="text16">Telephone number : 01123456789</string>
+    <string name="text17">Address : 21/8,4th Lane, Katuubadde, Moratuwa</string>
+    <string name="text18">Delivery Partner : Savishka de Silva</string>
+    <string name="btn2">TOTAL COST RS : 1590.00</string>
+    <string name="text19">Item</string>
+    <string name="text20">Unit Price</string>
+    <string name="text21">Quantity</string>
+    <string name="text22">Total</string>
+    <string name="text23">Beef Cheese Burger * Rs:520 ****** x1 ********** Rs:520</string>
+    <string name="text24">Veggie Burger ******* Rs:430 ****** x1 ********** Rs:430</string>
+    <string name="text25">Coca Cola *********** Rs:120 ****** x1 ********** Rs:120</string>
+    <string name="text26">Chicken Submarine ** Rs:520 ****** x1 ********** Rs:520</string>
+
+    <!--ui page4-->
+    <string name="text27">ADD A NEW DRIVER TO THE SYSTEM</string>
+    <string name="btn3">REGISTER</string>
+    <string name="edit9">Username::</string>
+    <string name="edit10">Password::</string>
+    <string name="edit11">Name::</string>
+    <string name="edit12">Age::</string>
+    <string name="edit13">Vehicle model::</string>
+    <string name="edit14">Vehicle number::</string>
+    <string name="edit15">Telephone number::</string>
+    <string name="edit16">DOB::</string>
+    <string name="edit17">Email::</string>
+    <string name="edit18">Address::</string>
+
+
+
 </resources>
