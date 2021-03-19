@@ -5,17 +5,23 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Burger"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PizzaApp">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MyOrder">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".InsertPayment">
+
+        </activity>
+        <activity android:name=".EditAndDeletePaymentData"></activity>
+        <activity android:name=".InsertDelivery" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

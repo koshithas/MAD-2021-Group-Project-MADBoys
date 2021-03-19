@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditAndDeletePaymentData">
+
+    <TextView
+        android:id="@+id/page_title_payment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/theme"
+        android:padding="15sp"
+        android:text="@string/title_delivery"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/show_fname"
+        android:layout_width="370dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="@string/show_fname"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:background="@drawable/inputborderround"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/page_title_payment" />
+
+    <TextView
+        android:id="@+id/show_lname"
+        android:layout_width="370dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="25dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:layout_marginRight="25dp"
+        android:text="@string/show_lname"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:background="@drawable/inputborderround"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/show_fname" />
+
+    <TextView
+        android:id="@+id/show_email"
+        android:layout_width="370dp"
+        android:layout_height="35dp"
+        android:text="@string/show_email"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/inputborderround"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/show_lname" />
+
+    <TextView
+        android:id="@+id/show_contact"
+        android:layout_width="370dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/show_contact"
+        android:textStyle="bold"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:textColor="@color/black"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/inputborderround"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/show_email" />
+
+    <TextView
+        android:id="@+id/show_address"
+        android:layout_width="370dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="25dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="40dp"
+        android:text="@string/show_address"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/inputborderround"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/show_contact" />
+
+    <Button
+        android:id="@+id/edit_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="56dp"
+        android:backgroundTint="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/show_address"
+        android:text="@string/btn_edit"/>
+
+    <Button
+        android:id="@+id/delete_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:backgroundTint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/show_address"
+        android:text="@string/btn_delete"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
