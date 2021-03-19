@@ -27,7 +27,6 @@
     <string name="edit8">Address :</string>
 
 
-
     <!--ui page3-->
     <string name="text14">BASKET DETAILS</string>
     <string name="text15">Customer Name : Kanaka Sooriyabandara</string>
@@ -57,7 +56,6 @@
     <string name="edit16">DOB::</string>
     <string name="edit17">Email::</string>
     <string name="edit18">Address::</string>
-
 
 
 </resources>
