@@ -33,7 +33,7 @@
         android:layout_marginRight="24dp"
         android:background="@drawable/inputborderround"
         android:hint="@string/d_hnt_fname"
-        android:inputType="text"
+        android:inputType="textPersonName"
 
         android:paddingLeft="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@+id/page_title_delivery" />
 
     <EditText
-        android:id="@+id/lNumber"
+        android:id="@+id/lName"
         android:layout_width="370dp"
         android:layout_height="38dp"
         android:layout_marginStart="18dp"
@@ -53,7 +53,7 @@
         android:textStyle="normal"
         android:layout_marginRight="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:inputType="text"
+        android:inputType="textPersonName"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fName"
@@ -74,7 +74,7 @@
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lNumber"
+        app:layout_constraintTop_toBottomOf="@+id/lName"
         android:background="@drawable/inputborderround"
         android:hint="@string/d_hnt_email"/>
 
@@ -86,7 +86,8 @@
         android:layout_marginLeft="18dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="24dp"
-        android:inputType="number"
+        android:inputType="phone"
+        android:maxLength="10"
         android:paddingLeft="10dp"
         android:layout_marginRight="24dp"
         app:layout_constraintEnd_toEndOf="parent"
