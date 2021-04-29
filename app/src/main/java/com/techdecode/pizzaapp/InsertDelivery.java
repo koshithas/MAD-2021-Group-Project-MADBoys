@@ -52,7 +52,7 @@ public class InsertDelivery extends AppCompatActivity {
         confirm.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
- awesomevalidation.validate();
+        awesomevalidation.validate();
             String fNameTXT = fName.getText().toString();
             String lNameTXT = lName.getText().toString();
             String emailTXT = email.getText().toString();
@@ -61,17 +61,17 @@ public class InsertDelivery extends AppCompatActivity {
 
 
             boolean checkInsertData = db.insertdeliverydata(fNameTXT,lNameTXT,emailTXT,contactTXT,addressTXT);
-            if (checkInsertData == true) {
+            if (checkInsertData == true)
                 Toast.makeText(getApplicationContext(), "New Entry Inserted", Toast.LENGTH_SHORT).show();
-//            Intent i= new Intent(InsertDelivery.this,InsertPayment.class);
-//            startActivity(i);
-            }
+            //Intent i= new Intent(InsertDelivery.this,InsertPayment.class);
+                  //startActivity(i);
 
 
-            else{
+
+            else
                 Toast.makeText(getApplicationContext(), "New Entry Not Inserted", Toast.LENGTH_SHORT).show();}
 
-        }
+
     });
 
 

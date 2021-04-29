@@ -14,7 +14,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table deliveryDetails(fname TEXT ,lname TEXT,email TEXT,contact NUMBER primary key,address TEXT)");
+        db.execSQL("create table deliveryDetails(id integer primary key autoincrement,fname TEXT ,lname TEXT,email TEXT,contact NUMBER ,address TEXT)");
 
     }
 

@@ -27,10 +27,10 @@
         android:layout_width="370dp"
         android:layout_height="40dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="45dp"
         android:background="@drawable/inputborderround"
         android:hint="@string/p_hnt_name"
-        android:inputType="text"
+        android:inputType="textPersonName"
         android:padding="3dp"
         android:paddingLeft="10dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,9 +51,9 @@
         app:layout_constraintTop_toBottomOf="@+id/cardOnName" />
 
     <EditText
-        android:id="@+id/expDate"
-        android:layout_width="370dp"
-        android:layout_height="40dp"
+        android:id="@+id/exp"
+        android:layout_width="214dp"
+        android:layout_height="44dp"
         android:layout_marginStart="18dp"
         android:layout_marginTop="25dp"
         android:background="@drawable/inputborderround"
@@ -73,6 +73,7 @@
         android:background="@drawable/inputborderround"
         android:hint="@string/p_hnt_scode"
         android:inputType="number"
+        android:maxLength="3"
         android:padding="3dp"
         android:paddingLeft="10dp"
         app:layout_constraintStart_toStartOf="parent"
