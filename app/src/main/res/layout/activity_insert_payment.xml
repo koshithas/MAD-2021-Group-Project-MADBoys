@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InsertPayment">
+
+    <TextView
+        android:id="@+id/page_title_payment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/theme"
+        android:padding="15sp"
+        android:text="@string/title_payment"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/cardOnName"
+        android:layout_width="370dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/inputborderround"
+        android:hint="@string/p_hnt_name"
+        android:inputType="textPersonName"
+        android:padding="3dp"
+        android:paddingLeft="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/page_title_payment" />
+
+    <EditText
+        android:id="@+id/cNumber"
+        android:layout_width="370dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/inputborderround"
+        android:hint="@string/p_hnt_number"
+        android:inputType="number"
+        android:padding="3dp"
+        android:paddingLeft="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardOnName" />
+
+    <EditText
+        android:id="@+id/exp"
+        android:layout_width="214dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/inputborderround"
+        android:hint="@string/p_hnt_exp"
+        android:inputType="date"
+        android:padding="3dp"
+        android:paddingLeft="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cNumber" />
+
+    <EditText
+        android:id="@+id/sCode"
+        android:layout_width="370dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/inputborderround"
+        android:hint="@string/p_hnt_scode"
+        android:inputType="number"
+        android:maxLength="3"
+        android:padding="3dp"
+        android:paddingLeft="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exp" />
+
+    <Button
+        android:id="@+id/pBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="@color/black"
+        android:onClick="@string/p_btn_back"
+        android:text="@string/p_btn_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sCode" />
+
+    <Button
+        android:id="@+id/pConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="64dp"
+        android:backgroundTint="@color/black"
+        android:text="@string/p_btn_confirm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sCode" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.942" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -121,7 +121,7 @@
             android:id="@+id/admin_add"
             android:backgroundTint="@color/yellow"
             android:textColor="@color/black"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="05dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Add"/>

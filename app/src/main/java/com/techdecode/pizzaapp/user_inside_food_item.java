@@ -2,8 +2,12 @@ package com.techdecode.pizzaapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,7 +16,9 @@ public class user_inside_food_item extends AppCompatActivity {
 
     ImageView img;
     TextView txtname, txtprice, txttype;
+    Button place_order;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +28,7 @@ public class user_inside_food_item extends AppCompatActivity {
         txtname = findViewById(R.id.checkout_food_name);
         txtprice = findViewById(R.id.checkout_total);
         txttype = findViewById(R.id.type);
+        place_order = findViewById(R.id.order_button);
 
         Bundle b = getIntent().getExtras();
         Bitmap bmp = b.getParcelable("image1");
@@ -31,5 +38,14 @@ public class user_inside_food_item extends AppCompatActivity {
         txtprice.setText(getIntent().getStringExtra("price1"));
         txttype.setText(getIntent().getStringExtra("type1"));
 
+        place_order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),InsertDelivery.class);
+                startActivity(intent);
+            }
+        });
     }
+
+
 }
