@@ -74,7 +74,7 @@ public class Login extends AppCompatActivity {
 
                 else {
 
-                    Toast.makeText(getApplicationContext(), "Wrong Email Password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Wrong Email or Password", Toast.LENGTH_SHORT).show();
 
                     e1.setText("");
                     e2.setText("");

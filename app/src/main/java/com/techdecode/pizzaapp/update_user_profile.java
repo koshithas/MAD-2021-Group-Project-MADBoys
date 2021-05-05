@@ -75,7 +75,7 @@ public class update_user_profile extends AppCompatActivity {
 
                             try {
                                 startup_screen.sqliteHelper.updateUserData(s2,s3,s4,s1);
-                                Toast.makeText(getApplicationContext(), "Added Successfully", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Updated Successfully", Toast.LENGTH_SHORT).show();
 
                             }catch (Exception e){
                                 e.printStackTrace();
