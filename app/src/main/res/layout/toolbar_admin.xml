@@ -5,20 +5,34 @@
     android:layout_height="wrap_content"
     android:background="@color/yellow"
     android:elevation="4dp"
+    android:padding="15dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-    <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:src="@drawable/logo"/>
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="25dp"
-        android:layout_marginLeft="230dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Admin"/>
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:src="@drawable/burger"/>
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-black"
+            android:text="Admin"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textAlignment="textEnd"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
 
 </androidx.appcompat.widget.Toolbar>

@@ -4,14 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".add_product"
     android:orientation="vertical"
-
-    >
-    <include
-    android:id="@+id/toolbar1"
-    layout="@layout/toolbar_admin"
-    />
+    tools:context=".register">
 
     <LinearLayout
         android:layout_width="362dp"
@@ -25,8 +19,9 @@
             android:layout_width="339dp"
             android:layout_height="68dp"
             android:layout_marginTop="20dp"
-            android:fontFamily="sans-serif-black"
-            android:text=" Add New Product"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text=" Register For Free"
+            android:textColor="@color/black"
             android:textSize="40dp" />
 
         <LinearLayout
@@ -35,78 +30,72 @@
             android:layout_margin="20dp"
             android:orientation="vertical">
 
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/burger"
+                android:layout_marginLeft="80dp"
+                />
+
 
             <EditText
-                android:id="@+id/admin_food_name"
-
+                android:id="@+id/register_username"
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/backgroun_input"
                 android:padding="10dp"
-                android:hint="@string/food_name"
+                android:hint="@string/username"
                 android:inputType="text"
-                 />
+                />
 
 
             <EditText
-                android:id="@+id/admin_food_price"
+                android:id="@+id/register_email"
                 style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/backgroun_input"
-                android:hint="@string/food_price"
-                android:inputType="number"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
                 android:padding="10dp" />
 
 
             <EditText
-                android:id="@+id/admin_food_type"
+                android:id="@+id/register_contactNumber"
                 style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/backgroun_input"
-                android:hint="@string/food_type"
-                android:inputType="text"
+                android:hint="@string/contact_number"
+                android:inputType="numberDecimal"
                 android:padding="10dp" />
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
-
-
-                <ImageView
-                    android:id="@+id/admin_food_image"
-                    android:layout_width="110dp"
-                    android:layout_height="110dp"
-
-                    android:src="@drawable/add_food" />
-
-                <Button
-                    android:id="@+id/admin_food_image_button"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="30dp"
-                    android:backgroundTint="@color/dark_yellow"
-                    android:text="Add a Photo"
-                    android:textColor="@color/black" />
-
-            </LinearLayout>
-
 
             <EditText
-                android:id="@+id/admin_food_description"
+                android:id="@+id/register_password"
                 style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/backgroun_input"
-                android:hint="@string/food_description"
-                android:inputType="text"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="100" />
+            <EditText
+                android:id="@+id/register_confirmPassword"
+                style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/backgroun_input"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
                 android:padding="10dp"
                 app:counterEnabled="true"
                 app:counterMaxLength="100" />
@@ -114,16 +103,20 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/admin_add"
+            android:id="@+id/signUp_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:backgroundTint="@color/dark_yellow"
-            android:text="Add"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:text="Sign Up"
+             />
 
 
     </LinearLayout>
+
+
+
 
 
 </LinearLayout>
