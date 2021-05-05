@@ -1,3 +1,22 @@
 <resources>
+    <string name="logintxt">LOGIN</string>
+    <string name="Username">User-Name</string>
+    <string name="password">Password</string>
     <string name="app_name">Pizza App</string>
+    <string name="lgnBtn">Login</string>
+    <string name="RegBtn">Register</string>
+    <string name="Registrationtxt">Register</string>
+    <string name="Email">E-Mail</string>
+    <string name="repass">Re-Enter Password</string>
+    <string name="signUp">Sign-Up</string>
+    <string name="profile">Profile</string>
+    <string name="name">Name</string>
+    <string name="phn_num">Phone-No</string>
+    <string name="address">Address</string>
+    <string name="save_btn">Save</string>
+    <string name="edit_btn">Edit</string>
+    <string name="dob">Date Of Birth</string>
+
+
+
 </resources>
