@@ -1,22 +1,24 @@
 <resources>
-    <string name="logintxt">LOGIN</string>
-    <string name="Username">User-Name</string>
-    <string name="password">Password</string>
     <string name="app_name">Pizza App</string>
-    <string name="lgnBtn">Login</string>
-    <string name="RegBtn">Register</string>
-    <string name="Registrationtxt">Register</string>
-    <string name="Email">E-Mail</string>
-    <string name="repass">Re-Enter Password</string>
-    <string name="signUp">Sign-Up</string>
-    <string name="profile">Profile</string>
-    <string name="name">Name</string>
-    <string name="phn_num">Phone-No</string>
-    <string name="address">Address</string>
-    <string name="save_btn">Save</string>
-    <string name="edit_btn">Edit</string>
-    <string name="dob">Date Of Birth</string>
-
+    <string name="food_price">Price</string>
+    <string name="food_name">Name</string>
+    <string name="food_type">Type(Ex: Large, Medium, Small)</string>
+    <string name="food_description">Description</string>
+    <string name="search_food">Search for a Food</string>
+    <string name="add_product">ADD NEW PRODUCT</string>
+    <string name="display_label">Text View</string>
+    <string name="food_banner">Welcome To Food Store</string>
+    <string name="place_order">Place Your Order</string>
+    <string name="add_cart">Add Cart</string>
+    <string name="description">Description</string>
+    <string name="view_food_cart">View Food List</string>
+    <string name="update">Update</string>
+    <string name="search_food_here">Search Food Here. . . </string>
+    <string name="invalid_name">Cannot Empty...! </string>
+    <string name="username">Username </string>
+    <string name="email">Email </string>
+    <string name="password">Password </string>
+    <string name="contact_number">Contact Number </string>
 
 
 </resources>
