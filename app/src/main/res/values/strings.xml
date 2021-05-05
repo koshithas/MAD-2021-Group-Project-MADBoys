@@ -8,10 +8,10 @@
     <string name="add_product">ADD NEW PRODUCT</string>
     <string name="display_label">Text View</string>
     <string name="food_banner">Welcome To Food Store</string>
-    <string name="place_order">Place Order</string>
+    <string name="place_order">Place Your Order</string>
     <string name="add_cart">Add Cart</string>
     <string name="description">Description</string>
-    <string name="view_food_cart">View Food Cart</string>
+    <string name="view_food_cart">View Food List</string>
     <string name="update">Update</string>
     <string name="search_food_here">Search Food Here. . . </string>
     <string name="invalid_name">Cannot Empty...! </string>
