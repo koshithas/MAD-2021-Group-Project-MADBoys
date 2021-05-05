@@ -24,7 +24,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:gravity="center"
-            android:layout_margin="10dp"
+            android:layout_margin="20dp"
             android:layout_below="@id/toolbar123"
             tools:layout_editor_absoluteX="188dp"
             tools:layout_editor_absoluteY="213dp" />

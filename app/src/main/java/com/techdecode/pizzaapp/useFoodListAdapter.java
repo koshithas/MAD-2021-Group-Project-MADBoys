@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -45,7 +47,12 @@ public class useFoodListAdapter extends BaseAdapter {
     }
 
 
-    private class ViewHolder{
+
+
+
+
+
+        private class ViewHolder{
         ImageView imageView;
         TextView txtName,txtPrice,txtType;
         Button btn;
@@ -90,10 +97,12 @@ public class useFoodListAdapter extends BaseAdapter {
             public void onClick(View v) {
 
                 Intent intent = new Intent(context, user_inside_food_item.class);
+
                 intent.putExtra("name1",food.getName());
                 intent.putExtra("price1",food.getPrice());
                 intent.putExtra("type1",food.getType());
-                intent.putExtra("image1",food.getImage());
+                intent.putExtra("image1",foodImage);
+                intent.putExtra("description1",food.getDescription());
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
                 context.startActivity(intent);

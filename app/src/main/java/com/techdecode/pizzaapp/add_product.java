@@ -20,6 +20,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.io.ByteArrayOutputStream;
@@ -32,6 +35,8 @@ public class add_product extends AppCompatActivity {
     private ImageView imageView;
     private Button btnChoose,btnAdd;
 
+
+    AwesomeValidation awesomeValidation;
 
     final int REQUEST_CODE_GALLERY = 999;
 
@@ -64,33 +69,46 @@ public class add_product extends AppCompatActivity {
             }
         });
 
+        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
 
-        btnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        awesomeValidation.addValidation(this, R.id.admin_food_name, RegexTemplate.NOT_EMPTY,R.string.invalid_name);
+        awesomeValidation.addValidation(this, R.id.admin_food_price, RegexTemplate.NOT_EMPTY,R.string.invalid_name);
+        awesomeValidation.addValidation(this, R.id.admin_food_type, RegexTemplate.NOT_EMPTY,R.string.invalid_name);
+        awesomeValidation.addValidation(this, R.id.admin_food_description, RegexTemplate.NOT_EMPTY,R.string.invalid_name);
 
-                try {
-                    sqliteHelper.insertdata(
-                            edtname.getText().toString().trim(),
-                            edtprice.getText().toString().trim(),
-                            edttype.getText().toString().trim(),
-                            edtdescription.getText().toString().trim(),
-                            imageViewToByte(imageView));
-                    Toast.makeText(getApplicationContext(), "ADDED Successfully", Toast.LENGTH_SHORT).show();
 
-                    edtname.setText("");
-                    edtprice.setText("");
-                    edttype.setText("");
-                    edtdescription.setText("");
-                    imageView.setImageResource(R.drawable.plus1);
 
-                }catch (Exception e){
-                    e.printStackTrace();
+
+            btnAdd.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+
+
+                        try {
+
+                            sqliteHelper.insertdata(
+                                    edtname.getText().toString().trim(),
+                                    edtprice.getText().toString().trim(),
+                                    edttype.getText().toString().trim(),
+                                    edtdescription.getText().toString().trim(),
+                                    imageViewToByte(imageView));
+
+                            Toast.makeText(getApplicationContext(), "Added Successfully", Toast.LENGTH_SHORT).show();
+
+                            edtname.setText("");
+                            edtprice.setText("");
+                            edttype.setText("");
+                            edtdescription.setText("");
+                            imageView.setImageResource(R.drawable.burger);
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+
                 }
-
-
-            }
-        });
+            });
 
 
 
@@ -165,6 +183,8 @@ public class add_product extends AppCompatActivity {
         btnAdd = findViewById(R.id.admin_add);
         imageView = findViewById(R.id.admin_food_image);
     }
+
+
 
 
 }

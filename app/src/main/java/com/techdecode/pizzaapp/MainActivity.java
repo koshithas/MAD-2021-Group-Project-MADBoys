@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static sqlhelper sqliteHelper;
 
-    Button b1,b2,b3;
+    Button b1,b3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,16 +30,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, add_product.class);
-                startActivity(intent);
-            }
-        });
-
-        b2 = findViewById(R.id.b2);
-
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, user_Home_Page.class);
                 startActivity(intent);
             }
         });
