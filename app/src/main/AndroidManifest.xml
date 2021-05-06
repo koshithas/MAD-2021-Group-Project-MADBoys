@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.techdecode.pizzaapp">
+    package="com.techdecode.pizzaapp" >
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -10,22 +10,24 @@
         android:label="Burgur King"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.PizzaApp">
-        <activity android:name=".InsertDelivery">
+        android:theme="@style/Theme.PizzaApp" >
+        <activity android:name=".OrderList" >
+        </activity>
+        <activity android:name=".OrderConfirmation" >
+        </activity>
+        <activity android:name=".InsertDelivery" >
+
+        </activity>
+        <activity android:name=".InsertPayment" />
+        <activity android:name=".user_inside_food_item" />
+        <activity android:name=".user_Home_Page" />
+        <activity android:name=".add_product" />
+        <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-        </activity>
-        <activity android:name=".InsertPayment" >
-
-        </activity>
-        <activity android:name=".user_inside_food_item" />
-        <activity android:name=".user_Home_Page" />
-        <activity android:name=".add_product" />
-        <activity android:name=".MainActivity">
 
         </activity>
         <activity

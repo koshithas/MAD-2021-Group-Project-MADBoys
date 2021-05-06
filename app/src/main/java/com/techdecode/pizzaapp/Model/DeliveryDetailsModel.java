@@ -1,6 +1,8 @@
 package com.techdecode.pizzaapp.Model;
 
 import java.io.Serializable;
+import java.util.Date;
+
 @SuppressWarnings("serial")
 public class DeliveryDetailsModel  implements Serializable {
 
@@ -14,10 +16,11 @@ public class DeliveryDetailsModel  implements Serializable {
     private String email;
     private String contact;
     private String address;
-    private String cardOnName;
-    private String cardNumber;
-    private String expDate;
-    private String securityCode;
+     Date date;
+    //private String cardOnName;
+//    private String cardNumber;
+//    private String expDate;
+//    private String securityCode;
 
     public String getfName() {
         return fName;
@@ -29,6 +32,14 @@ public class DeliveryDetailsModel  implements Serializable {
 
     public String getlName() {
         return lName;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public void setlName(String lName) {
@@ -59,35 +70,35 @@ public class DeliveryDetailsModel  implements Serializable {
         this.address = address;
     }
 
-    public String getCardOnName() {
-        return cardOnName;
-    }
-
-    public void setCardOnName(String cardOnName) {
-        this.cardOnName = cardOnName;
-    }
-
-    public String getCardNumber() {
-        return cardNumber;
-    }
-
-    public void setCardNumber(String cardNumber) {
-        this.cardNumber = cardNumber;
-    }
-
-    public String getExpDate() {
-        return expDate;
-    }
-
-    public void setExpDate(String expDate) {
-        this.expDate = expDate;
-    }
-
-    public String getSecurityCode() {
-        return securityCode;
-    }
-
-    public void setSecurityCode(String securityCode) {
-        this.securityCode = securityCode;
-    }
+//   public String getCardOnName() {
+//       return cardOnName;
+//   }
+//
+//    public void setCardOnName(String cardOnName) {
+//       this.cardOnName = cardOnName;
+//    }
+//
+//    public String getCardNumber() {
+//        return cardNumber;
+//    }
+//
+//    public void setCardNumber(String cardNumber) {
+//        this.cardNumber = cardNumber;
+//    }
+//
+//    public String getExpDate() {
+//        return expDate;
+//    }
+//
+//    public void setExpDate(String expDate) {
+//        this.expDate = expDate;
+//    }
+//
+//    public String getSecurityCode() {
+//        return securityCode;
+//    }
+//
+//    public void setSecurityCode(String securityCode) {
+//        this.securityCode = securityCode;
+//    }
 }

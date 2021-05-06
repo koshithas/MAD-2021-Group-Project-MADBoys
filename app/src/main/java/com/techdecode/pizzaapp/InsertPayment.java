@@ -1,8 +1,15 @@
 package com.techdecode.pizzaapp;
 
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.icu.text.DateFormat;
+import android.icu.text.SimpleDateFormat;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,77 +18,133 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.techdecode.pizzaapp.Model.DeliveryDetailsModel;
+import com.techdecode.pizzaapp.Model.FoodDetailsModel;
+
+import java.util.Date;
+import java.util.Locale;
+import java.util.jar.Attributes;
 
 public class InsertPayment extends AppCompatActivity {
     EditText cardName,cardNumber,exp,security;
-
     Button confirm;
-    DBHelper db;
+    TextView name,name2;
+    AwesomeValidation awesomevalidation;
 
 
-    DeliveryDetailsModel detailsModel;
+
+    DeliveryDetailsModel deliveryModel;
+    FoodDetailsModel foodDetailsModel;
 
 
-    String TAG="InsertPayment";
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert_payment);
 
+        init();
+        String cardOnName = cardName.getText().toString();
+        Intent i = getIntent();
+
+         String Name= i.getStringExtra("foodName2");
+        String price =i.getStringExtra("foodPrice2");
+        String type = i.getStringExtra("foodType2");
+        String qty = i.getStringExtra("qty1");
+        name.setText(Name);
+        name2.setText(qty);
+        //style
+        awesomevalidation = new AwesomeValidation(ValidationStyle.BASIC);
+        awesomevalidation.addValidation(this, R.id.cardOnName, RegexTemplate.NOT_EMPTY,R.string.invalid_card_name);
+        awesomevalidation.addValidation(this, R.id.cNumber, RegexTemplate.NOT_EMPTY,R.string.invalid_card_number);
+        awesomevalidation.addValidation(this, R.id.exp,RegexTemplate.NOT_EMPTY, R.string.invalid_exp);
+        awesomevalidation.addValidation(this, R.id.sCode, RegexTemplate.NOT_EMPTY, R.string.invalid_pin);
 
 
-        // To retrieve object in second Activity
-        try{
+        try {
+            deliveryModel = (DeliveryDetailsModel) i.getSerializableExtra("MyClass");
+            foodDetailsModel = (FoodDetailsModel) i.getSerializableExtra("abc");
 
-            detailsModel= (DeliveryDetailsModel) getIntent().getSerializableExtra("MyClass");
-
-
-
-
-        }catch (Exception e){
-
-
-            Log.e(TAG,e.getMessage());
         }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        confirm.setOnClickListener(v -> {
+                if(awesomevalidation.validate()){
+            insertTODB();}
+        });
 
-        Log.e(TAG,"calling");
-        Log.e(TAG,detailsModel.getfName()+"");
-
+    }
+    private void init(){
 
         cardName = (EditText) findViewById(R.id.cardOnName);
         cardNumber = (EditText) findViewById(R.id.cNumber);
         exp =(EditText)  findViewById(R.id.exp);
         security = (EditText) findViewById(R.id.sCode);
-        db = new DBHelper(this);
         confirm =findViewById(R.id.pConfirm);
+        name = findViewById(R.id.empty2);
+        name2 = findViewById(R.id.empty1);
 
-
-
-        String cardNameTXT = cardName.getText().toString();
-        String cardNumberTXT = cardName.getText().toString();
-        String expTXT = cardName.getText().toString();
-        String securityTXT = cardName.getText().toString();
-
-        Intent i = getIntent();
-        String fname_txt= i.getStringExtra("FIRST_NAME");
-        String lname_txt=  i.getStringExtra("LAST_NAME");
-        String emailtxt =i.getStringExtra("EMAIL");
-        String contacttxt=i.getStringExtra("CONTACT");
-        String addresstxt =i.getStringExtra("ADDRESS");
-
-        
-
-
-        confirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boolean checkInsertData = db.insertData(fname_txt,lname_txt,emailtxt,contacttxt,addresstxt,cardNameTXT,cardNumberTXT,expTXT,securityTXT);
-                if(checkInsertData = true)
-                    Toast.makeText(getApplicationContext(), "New Entry Inserted", Toast.LENGTH_SHORT).show();
-                else
-                    Toast.makeText(getApplicationContext(), "New Entry is not Inserted", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
+
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    private void insertTODB() {
+
+        DBHelpOrder obj= new DBHelpOrder(getApplication());
+
+
+
+        if( obj.insertData(deliveryModel.getfName(),deliveryModel.getlName(),deliveryModel.getEmail(),deliveryModel.getContact(),deliveryModel.getAddress(),
+                cardName.getText().toString(),cardNumber.getText().toString(),exp.getText().toString(),security.getText().toString(),name.getText().toString(),name2.getText().toString(),getDateTime())){
+
+
+
+            alertBox("Inset Success ");
+        }  else{
+            alertBox("Inset Failed  ");
+        }
+
+    }
+
+    private void alertBox(String txt) {
+
+
+        AlertDialog alertDialog = new AlertDialog.Builder(this)
+//set icon
+                .setIcon(android.R.drawable.ic_dialog_alert)
+//set title
+                .setTitle("Are you sure to Exit")
+//set message
+                .setMessage(txt)
+//set positive button
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        //set what would happen when positive button is clicked
+                        finish();
+                    }
+                })
+//set negative button
+
+                .show();
+    }
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    private String getDateTime() {
+
+            SimpleDateFormat dateFormat = new SimpleDateFormat(
+
+                "yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+
+        Date date = new Date();
+
+        return dateFormat.format(date);
+
+    }
+
+
+
 }

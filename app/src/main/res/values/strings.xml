@@ -36,7 +36,7 @@
     <string name="o_btn_add">+</string>
     <string name="o_btn_remove">-</string>
 
-    <string name="o_quantity">2</string>
+    <string name="o_quantity">1</string>
     <string name="o_subtotal_name">Subtotal(LKR):</string>
     <string name="o_subtotal_price">1000.00</string>
 
@@ -66,8 +66,21 @@
     <string name="confirm_edit_delete">CONFIRM</string>
     <string name="invalid_name">"Please Enter Valid Name "</string>
     <string name="invalid_email">Please Enter Valid Email</string>
+    <string name="invalid_card_name">Please Enter Card Holder Name</string>
+    <string name="invalid_card_number">Please Enter valid card number</string>
+    <string name="invalid_exp">Please Enter Expire Date(MM/YYYY)</string>
+    <string name="invalid_pin">Please Enter valid security code</string>
+
     <string name="err_tel">Please Enter Valid Contact Number</string>
     <string name="invalid_address">Please Enter Correct Address</string>
+    <string name="unitPice">Unit Pice</string>
+    <string name="foodType">L</string>
+    <string name="OrderId">Order ID :</string>
+    <string name="ProductId">Product ID :</string>
+    <string name="Contact">Contact :</string>
+    <string name="quantity">Qty :</string>
+    <string name="address">Address :</string>
+    <string name="date">Date :</string>
 
 
 </resources>

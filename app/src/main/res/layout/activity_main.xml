@@ -18,6 +18,16 @@
         tools:layout_editor_absoluteX="16dp" />
 
     <Button
+        android:id="@+id/btnOrderList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="order list(Admin)"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.272"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
         android:id="@+id/b2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

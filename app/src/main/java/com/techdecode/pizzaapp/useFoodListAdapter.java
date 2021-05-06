@@ -48,7 +48,7 @@ public class useFoodListAdapter extends BaseAdapter {
     private class ViewHolder{
         ImageView imageView;
         TextView txtName,txtPrice,txtType;
-        Button btn;
+        Button btn,btn2;
     }
 
 
@@ -66,6 +66,7 @@ public class useFoodListAdapter extends BaseAdapter {
             holder.imageView = row.findViewById(R.id.use_food_image);
             holder.txtPrice = row.findViewById(R.id.user_food_price);
             holder.txtType = row.findViewById(R.id.user_food_type);
+
 
 
             row.setTag(holder);
@@ -93,13 +94,14 @@ public class useFoodListAdapter extends BaseAdapter {
                 intent.putExtra("name1",food.getName());
                 intent.putExtra("price1",food.getPrice());
                 intent.putExtra("type1",food.getType());
-                intent.putExtra("image1",food.getImage());
+                intent.putExtra("image1", foodImage);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
                 context.startActivity(intent);
 
             }
         });
+
 
 
 
