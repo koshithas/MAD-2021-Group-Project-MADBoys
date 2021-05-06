@@ -180,4 +180,76 @@ public class sqlhelper extends SQLiteOpenHelper {
     }
 
 
+
+
+
+    //savindu
+
+    public Boolean insertData(String firstName,String lastName,String email,String contactNumber,
+                              String address,String cardName,String cardNumber,String expDate,
+                              String securityCode,String productId,String qty,String date) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        //for our values
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("firstName", firstName);
+        contentValues.put("lastName", lastName);
+        contentValues.put("email", email);
+        contentValues.put("contactNumber", contactNumber);
+        contentValues.put("address", address);
+        contentValues.put("cardName", cardName);
+        contentValues.put("cardNumber", cardNumber);
+        contentValues.put("expDate", expDate);
+        contentValues.put("securityCode", securityCode);
+        contentValues.put("productId", productId);
+        contentValues.put("qty", qty);
+        contentValues.put("date", date);
+
+        long results = db.insert("Orders", null,contentValues);
+
+        if(results == -1){
+            return false;
+        }else {
+            return true;
+        }
+
+    }
+
+    public Cursor getData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor =db.rawQuery("select * from Orders",null);
+        return  cursor;
+
+
+    }
+
+
+    public void deleteOrderData(int id) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+    /*
+
+
+        long results = db.delete("Orders", "orderId = ?", new int[]{id});
+
+        if (results == -1) {
+            return false;
+        } else {
+            return true;
+        }
+
+     */
+        String sql = "DELETE FROM Orders WHERE OrderId = ?";
+        SQLiteStatement sqLiteStatement = sqLiteDatabase.compileStatement(sql);
+        sqLiteStatement.clearBindings();
+        sqLiteStatement.bindDouble(1,(double)id);
+
+        sqLiteStatement.execute();
+        sqLiteDatabase.close();
+
+    }
+
+
+
+
+
+
 }
