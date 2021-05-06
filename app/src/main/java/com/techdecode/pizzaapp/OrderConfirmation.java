@@ -12,8 +12,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class OrderConfirmation extends AppCompatActivity {
-   TextView ViewFoodName,viewFoodType,unitPrice,viewFoodQuantity,viewTotal;
-   ImageView img;
+
+    TextView ViewFoodName,viewFoodType,unitPrice,viewFoodQuantity,viewTotal;
+    ImageView img;
     private Button qMinusBtn, qPlusBtn,btn;
     private int foodQuantity=1;
     @Override
@@ -30,9 +31,9 @@ public class OrderConfirmation extends AppCompatActivity {
 
 
         Intent i = getIntent();
-       String Name= i.getStringExtra("foodName");
+        String Name= i.getStringExtra("foodName");
         String price =i.getStringExtra("foodPrice");
-       String type = i.getStringExtra("foodNType");
+        String type = i.getStringExtra("foodNType");
         //startActivities(i);
 
 
@@ -78,7 +79,7 @@ public class OrderConfirmation extends AppCompatActivity {
         viewFoodQuantity =findViewById(R.id.food_quantity);
         qMinusBtn =findViewById(R.id.q_minus_btn);
         qPlusBtn =findViewById(R.id.q_plus_btn);
-        viewTotal =findViewById(R.id.totalPriceView);
+        //viewTotal =findViewById(R.id.totalView);
         btn = findViewById(R.id.btn_confirmation);
         img = findViewById(R.id.order_confirm_image);
 
@@ -86,31 +87,18 @@ public class OrderConfirmation extends AppCompatActivity {
     }
     private void DecreaseQuantity()
     {
-        int unitP =Integer.parseInt(unitPrice.getText().toString());
-
         if(foodQuantity > 1)
         {
             foodQuantity = foodQuantity - 1;
             viewFoodQuantity.setText(String.valueOf(foodQuantity));
 
-            int Total =unitP*foodQuantity;
-            String setNewTotal =String.valueOf(Total);
-            viewTotal.setText(setNewTotal);
-
 
         }
     }
 
-    private void IncreaseQuantity(){
-        int unitP =Integer.parseInt(unitPrice.getText().toString());
+    private void IncreaseQuantity()
     {
         foodQuantity = foodQuantity + 1;
         viewFoodQuantity.setText(String.valueOf(foodQuantity));
-        int Total =unitP *foodQuantity;
-        String setNewTotal =String.valueOf(Total);
-        viewTotal.setText(setNewTotal);
-
-
-
-    }}
+    }
 }

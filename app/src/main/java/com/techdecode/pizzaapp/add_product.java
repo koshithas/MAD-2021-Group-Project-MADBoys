@@ -20,6 +20,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.io.ByteArrayOutputStream;
@@ -32,6 +35,8 @@ public class add_product extends AppCompatActivity {
     private ImageView imageView;
     private Button btnChoose,btnAdd;
 
+
+ //   AwesomeValidation awesomeValidation;
 
     final int REQUEST_CODE_GALLERY = 999;
 
@@ -64,33 +69,64 @@ public class add_product extends AppCompatActivity {
             }
         });
 
+   //     awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
+/*
+        awesomeValidation.addValidation(this, R.id.admin_food_name, RegexTemplate.NOT_EMPTY,R.string.invalid_name);
+        awesomeValidation.addValidation(this, R.id.admin_food_price, RegexTemplate.NOT_EMPTY,R.string.invalid_name);
+        awesomeValidation.addValidation(this, R.id.admin_food_type, RegexTemplate.NOT_EMPTY,R.string.invalid_name);
+        awesomeValidation.addValidation(this, R.id.admin_food_description, RegexTemplate.NOT_EMPTY,R.string.invalid_name);
 
-        btnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+*/
 
-                try {
-                    sqliteHelper.insertdata(
-                            edtname.getText().toString().trim(),
-                            edtprice.getText().toString().trim(),
-                            edttype.getText().toString().trim(),
-                            edtdescription.getText().toString().trim(),
-                            imageViewToByte(imageView));
-                    Toast.makeText(getApplicationContext(), "ADDED Successfully", Toast.LENGTH_SHORT).show();
 
-                    edtname.setText("");
-                    edtprice.setText("");
-                    edttype.setText("");
-                    edtdescription.setText("");
-                    imageView.setImageResource(R.drawable.plus1);
+            btnAdd.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-                }catch (Exception e){
-                    e.printStackTrace();
+
+                    String s1 = edtname.getText().toString();
+                    String s2 = edtprice.getText().toString();
+                    String s3 = edttype.getText().toString();
+                    String s4 = edtdescription.getText().toString();
+
+
+
+                    if (s1.equals("")||s2.equals("")||s3.equals("")||s4.equals("")) {
+
+                        Toast.makeText(getApplicationContext(), "Field Empty", Toast.LENGTH_SHORT).show();
+
+                    }else {
+
+                        if (s3.equals("Large")||s3.equals("Medium")||s3.equals("Small")) {
+
+                            try {
+
+                                sqliteHelper.insertdata(
+                                        edtname.getText().toString().trim(),
+                                        edtprice.getText().toString().trim(),
+                                        edttype.getText().toString().trim(),
+                                        edtdescription.getText().toString().trim(),
+                                        imageViewToByte(imageView));
+
+                                Toast.makeText(getApplicationContext(), "Added Successfully", Toast.LENGTH_SHORT).show();
+
+                                edtname.setText("");
+                                edtprice.setText("");
+                                edttype.setText("");
+                                edtdescription.setText("");
+                                imageView.setImageResource(R.drawable.burger);
+
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }else {
+                            Toast.makeText(getApplicationContext(), "Food Type Should Be Large, Medium or Small", Toast.LENGTH_SHORT).show();
+                            edttype.setText("");
+                        }
+                    }
+
                 }
-
-
-            }
-        });
+            });
 
 
 
@@ -165,6 +201,8 @@ public class add_product extends AppCompatActivity {
         btnAdd = findViewById(R.id.admin_add);
         imageView = findViewById(R.id.admin_food_image);
     }
+
+
 
 
 }

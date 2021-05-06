@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static sqlhelper sqliteHelper;
 
-    Button b1,b2,b3,btn;
+    Button b1,b2,b3,b4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,16 +34,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        b2 = findViewById(R.id.b2);
-
+        b2 = findViewById(R.id.check_order_details);
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, user_Home_Page.class);
+                Intent intent = new Intent(MainActivity.this, OrderList.class);
                 startActivity(intent);
             }
         });
-
 
         b3 = findViewById(R.id.b3);
 
@@ -55,12 +53,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btn = findViewById(R.id.btnOrderList);
-
-        btn.setOnClickListener(new View.OnClickListener() {
+        b4 = findViewById(R.id.admin_logout_btn);
+        b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, OrderList.class);
+
+                Intent intent = new Intent(MainActivity.this, startup_screen.class);
                 startActivity(intent);
             }
         });

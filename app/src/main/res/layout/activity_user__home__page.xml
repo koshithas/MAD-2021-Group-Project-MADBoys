@@ -19,37 +19,42 @@
         android:orientation="vertical">
 
 
-            <EditText
-                android:id="@+id/food_search_bar"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/input_style_01"
-                android:drawableStart="@drawable/search_icon"
-                android:drawablePadding="10dp"
-                android:ems="10"
-                android:focusable="false"
-                android:hint="Search for a Food"
-                android:padding="10dp"
-                android:textSize="18sp" />
+        <SearchView
+            android:id="@+id/food_search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:queryHint="@string/search_food_here"
+            android:iconifiedByDefault="false"
+            android:layout_marginLeft="10dp"
+            android:layout_margin="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/backgroun_input"
+            android:textSize="18sp"/>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:orientation="vertical"
+            >
 
             <GridView
                 android:id="@+id/grideview12"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_below="@id/food_search_bar"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:gravity="center"
-                android:layout_margin="5dp"
+                android:numColumns="auto_fit"
                 tools:layout_editor_absoluteX="188dp"
                 tools:layout_editor_absoluteY="213dp"
-                android:layout_below="@id/food_search_bar"
-                android:numColumns="auto_fit"
                 tools:listitem="@layout/user_food_item"
+
                 />
+
+
+        </LinearLayout>
+
 
     </LinearLayout>
 

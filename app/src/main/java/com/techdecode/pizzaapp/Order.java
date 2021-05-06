@@ -1,6 +1,7 @@
 package com.techdecode.pizzaapp;
 
 public class Order {
+
     private int orderId;
     private String productID;
     private  String qty;
@@ -65,4 +66,6 @@ public class Order {
         this.date = date;
 
     }
+
+
 }

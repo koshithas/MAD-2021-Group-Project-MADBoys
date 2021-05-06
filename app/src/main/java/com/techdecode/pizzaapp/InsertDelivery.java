@@ -2,14 +2,12 @@ package com.techdecode.pizzaapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
@@ -20,9 +18,10 @@ import com.techdecode.pizzaapp.Model.FoodDetailsModel;
 import java.io.Serializable;
 
 public class InsertDelivery extends AppCompatActivity {
+
     Button confirm,back;
-   EditText fName,lName,email,contact,address;
-   TextView name;
+    EditText fName,lName,email,contact,address;
+    TextView name;
 
     AwesomeValidation awesomevalidation;
     @Override
@@ -59,12 +58,13 @@ public class InsertDelivery extends AppCompatActivity {
 
 
                     DeliveryDetailsModel obj = new DeliveryDetailsModel();
+                    FoodDetailsModel model = new FoodDetailsModel();
 
-                    obj.setfName(fName.getText().toString());
-                    obj.setlName(lName.getText().toString());
-                    obj.setEmail(email.getText().toString());
-                    obj.setContact(contact.getText().toString());
-                    obj.setAddress(address.getText().toString());
+                    obj.setfName(fName.getText().toString().trim());
+                    obj.setlName(lName.getText().toString().trim());
+                    obj.setEmail(email.getText().toString().trim());
+                    obj.setContact(contact.getText().toString().trim());
+                    obj.setAddress(address.getText().toString().trim());
 
                     Intent i = new Intent(InsertDelivery.this, InsertPayment.class);
 
@@ -81,12 +81,12 @@ public class InsertDelivery extends AppCompatActivity {
 
 
 
-            });
+        });
 
 
     }
 
-  private void init(){
+    private void init(){
         fName = findViewById(R.id.fName);
         lName = findViewById(R.id.lName);
         email = findViewById(R.id.email);
@@ -96,8 +96,6 @@ public class InsertDelivery extends AppCompatActivity {
         confirm = findViewById(R.id.dConfirm);
         name = findViewById(R.id.page_title_delivery);
 
-  }
-
-
+    }
 
 }

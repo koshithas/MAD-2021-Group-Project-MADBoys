@@ -68,4 +68,5 @@ public class OrderListAdapter extends BaseAdapter {
         holder.date.setText(order.getDate());
         return row;
     }
+
 }

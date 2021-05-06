@@ -4,15 +4,11 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.icu.text.DateFormat;
 import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -26,15 +22,15 @@ import com.techdecode.pizzaapp.Model.FoodDetailsModel;
 
 import java.util.Date;
 import java.util.Locale;
-import java.util.jar.Attributes;
 
 public class InsertPayment extends AppCompatActivity {
+
     EditText cardName,cardNumber,exp,security;
     Button confirm;
     TextView name,name2;
     AwesomeValidation awesomevalidation;
 
-
+    public static sqlhelper sqliteHelper;
 
     DeliveryDetailsModel deliveryModel;
     FoodDetailsModel foodDetailsModel;
@@ -46,11 +42,13 @@ public class InsertPayment extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert_payment);
 
+        sqlhelper obj = new sqlhelper(this, "FoodDB.sqlite",null, 1);
+
         init();
         String cardOnName = cardName.getText().toString();
         Intent i = getIntent();
 
-         String Name= i.getStringExtra("foodName2");
+        String Name= i.getStringExtra("foodName2");
         String price =i.getStringExtra("foodPrice2");
         String type = i.getStringExtra("foodType2");
         String qty = i.getStringExtra("qty1");
@@ -73,8 +71,8 @@ public class InsertPayment extends AppCompatActivity {
             e.printStackTrace();
         }
         confirm.setOnClickListener(v -> {
-                if(awesomevalidation.validate()){
-            insertTODB();}
+            if(awesomevalidation.validate()){
+                insertTODB();}
         });
 
     }
@@ -94,16 +92,18 @@ public class InsertPayment extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void insertTODB() {
 
-        DBHelpOrder obj= new DBHelpOrder(getApplication());
+       sqlhelper obj = new sqlhelper(this, "FoodDB.sqlite",null, 1);
+
+        obj.queryData("CREATE TABLE IF NOT EXISTS Orders (orderId INTEGER PRIMARY KEY AUTOINCREMENT, firstName text, lastName text, email text, contactNumber INTEGER, address text, cardName text, cardNumber text, expDate text, securityCode text, productId text, qty text, date text)");
 
 
 
-        if( obj.insertData(deliveryModel.getfName(),deliveryModel.getlName(),deliveryModel.getEmail(),deliveryModel.getContact(),deliveryModel.getAddress(),
-                cardName.getText().toString(),cardNumber.getText().toString(),exp.getText().toString(),security.getText().toString(),name.getText().toString(),name2.getText().toString(),getDateTime())){
+        if( obj.insertData(deliveryModel.getfName(),deliveryModel.getlName(),deliveryModel.getEmail(),deliveryModel.getContact(),deliveryModel.getAddress(),cardName.getText().toString(),cardNumber.getText().toString(),exp.getText().toString(),security.getText().toString(),name.getText().toString(),name2.getText().toString(),getDateTime())){
 
+            Toast.makeText(getApplicationContext(), "Order Added Successfully...", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(InsertPayment.this,user_Home_Page.class);
+            startActivity(intent);
 
-
-            alertBox("Inset Success ");
         }  else{
             alertBox("Inset Failed  ");
         }
@@ -135,7 +135,7 @@ public class InsertPayment extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.N)
     private String getDateTime() {
 
-            SimpleDateFormat dateFormat = new SimpleDateFormat(
+        SimpleDateFormat dateFormat = new SimpleDateFormat(
 
                 "yyyy-MM-dd HH:mm:ss", Locale.getDefault());
 
@@ -144,7 +144,6 @@ public class InsertPayment extends AppCompatActivity {
         return dateFormat.format(date);
 
     }
-
 
 
 }

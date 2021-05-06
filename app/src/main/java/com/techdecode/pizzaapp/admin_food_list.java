@@ -134,6 +134,7 @@ public class admin_food_list extends AppCompatActivity {
         final EditText edtDescription = dialog.findViewById(R.id.update_description);
         Button update_btn = dialog.findViewById(R.id.update_btn);
 
+
         //set width for dialog
         int width = (int) (activity.getResources().getDisplayMetrics().widthPixels * 0.95);
 
@@ -158,25 +159,42 @@ public class admin_food_list extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                try {
+                String s1 = edtName.getText().toString();
+                String s2 = edtPrice.getText().toString();
+                String s3 = edtType.getText().toString();
+                String s4 = edtDescription.getText().toString();
 
-                    MainActivity.sqliteHelper.updateData(
-                            edtName.getText().toString().trim(),
-                            edtPrice.getText().toString().trim(),
-                            edtType.getText().toString().trim(),
-                            edtDescription.getText().toString().trim(),
-                            add_product.imageViewToByte(imageView),
-                            position
-                    );
-                    dialog.dismiss();
-                    Toast.makeText(getApplicationContext(),"Update Successfully...",Toast.LENGTH_SHORT).show();
+                if (s1.equals("")||s2.equals("")||s3.equals("")||s4.equals("")) {
+
+                    Toast.makeText(getApplicationContext(), "Field Empty", Toast.LENGTH_SHORT).show();
+
+                }else {
+                    if (s3.equals("Large")||s3.equals("Medium")||s3.equals("Small")) {
+
+                        try {
+
+                            MainActivity.sqliteHelper.updateData(
+                                    edtName.getText().toString().trim(),
+                                    edtPrice.getText().toString().trim(),
+                                    edtType.getText().toString().trim(),
+                                    edtDescription.getText().toString().trim(),
+                                    add_product.imageViewToByte(imageView),
+                                    position
+                            );
+                            dialog.dismiss();
+                            Toast.makeText(getApplicationContext(), "Update Successfully...", Toast.LENGTH_SHORT).show();
 
 
-                }catch (Exception e){
-                    Log.e("Update error", e.getMessage());
+                        } catch (Exception e) {
+                            Log.e("Update error", e.getMessage());
+                        }
+
+                        updateFoodList();
+                    }else {
+                        Toast.makeText(getApplicationContext(), "Food Type Should Be Large, Medium or Small", Toast.LENGTH_SHORT).show();
+                        edtType.setText("");
+                    }
                 }
-
-                updateFoodList();
             }
         });
 

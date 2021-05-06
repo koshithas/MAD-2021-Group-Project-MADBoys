@@ -3,8 +3,7 @@ package com.techdecode.pizzaapp.Model;
 import java.io.Serializable;
 import java.util.Date;
 
-@SuppressWarnings("serial")
-public class DeliveryDetailsModel  implements Serializable {
+public class DeliveryDetailsModel implements Serializable {
 
 
     public DeliveryDetailsModel() {
@@ -16,7 +15,7 @@ public class DeliveryDetailsModel  implements Serializable {
     private String email;
     private String contact;
     private String address;
-     Date date;
+    Date date;
     //private String cardOnName;
 //    private String cardNumber;
 //    private String expDate;
@@ -101,4 +100,6 @@ public class DeliveryDetailsModel  implements Serializable {
 //    public void setSecurityCode(String securityCode) {
 //        this.securityCode = securityCode;
 //    }
+
+
 }

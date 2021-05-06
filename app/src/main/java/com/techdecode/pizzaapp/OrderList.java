@@ -1,21 +1,15 @@
- package com.techdecode.pizzaapp;
+package com.techdecode.pizzaapp;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
-import android.Manifest;
-import android.app.Activity;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -23,6 +17,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class OrderList extends AppCompatActivity {
+
 
     GridView gridView;
     ArrayList<Order> list;
@@ -35,12 +30,12 @@ public class OrderList extends AppCompatActivity {
         setContentView(R.layout.activity_order_list);
 
         gridView = (GridView) findViewById(R.id.grideViewOrders);
-       // btn = (Button) findViewById(R.id.remove);
+        // btn = (Button) findViewById(R.id.remove);
         list = new ArrayList<>();
         adapter = new OrderListAdapter(getApplicationContext(),R.layout.orders,list);
         gridView.setAdapter(adapter);
 
-        DBHelpOrder obj= new DBHelpOrder(getApplication());
+        sqlhelper obj= new sqlhelper(this, "FoodDB.sqlite",null, 1);
         Cursor c=obj.getData();
         list.clear();
         while (c.moveToNext()){
@@ -78,14 +73,14 @@ public class OrderList extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int item) {
 
 
-                            //delete
-                            DBHelpOrder obj= new DBHelpOrder(getApplication());
-                            Cursor c=obj.getData();
-                            ArrayList<Integer> arrID = new ArrayList<Integer>();
-                            while (c.moveToNext()){
-                                arrID.add(c.getInt(0));
-                            }
-                            showDialogToDelete(arrID.get(position));
+                        //delete
+                        sqlhelper obj= new sqlhelper(getApplicationContext(), "FoodDB.sqlite",null, 1);
+                        Cursor c=obj.getData();
+                        ArrayList<Integer> arrID = new ArrayList<Integer>();
+                        while (c.moveToNext()){
+                            arrID.add(c.getInt(0));
+                        }
+                        showDialogToDelete(arrID.get(position));
 
 
                     }
@@ -115,10 +110,12 @@ public class OrderList extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
+                sqlhelper obj= new sqlhelper(getApplicationContext(), "FoodDB.sqlite",null, 1);
+
                 try {
 
-                    DBHelpOrder obj= new DBHelpOrder(getApplication());
-                    obj.deleteData(orderId);
+
+                    obj.deleteOrderData(orderId);
                     Toast.makeText(getApplicationContext(), "Delete Successfully...", Toast.LENGTH_SHORT).show();
                 }catch (Exception e){
                     Log.e("Error",e.getMessage());
@@ -150,7 +147,7 @@ public class OrderList extends AppCompatActivity {
 
         //get all data from sqlite
 
-        DBHelpOrder obj= new DBHelpOrder(getApplication());
+        sqlhelper obj= new sqlhelper(this, "FoodDB.sqlite",null, 1);
         Cursor c=obj.getData();
         list.clear();
 

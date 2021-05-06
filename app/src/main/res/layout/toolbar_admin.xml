@@ -5,21 +5,45 @@
     android:layout_height="wrap_content"
     android:background="@color/yellow"
     android:elevation="4dp"
-    android:padding="15sp"
+    android:padding="15dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-    <ImageView
-        android:layout_width="60dp"
-        android:layout_height="50dp"
-        android:src="@drawable/burger"/>
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="25dp"
-        android:layout_marginLeft="230dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Admin"/>
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:src="@drawable/burger"/>
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-black"
+            android:text="Admin"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textAlignment="center"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/admin_logout_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:textSize="10dp"
+            android:backgroundTint="@color/red"
+
+
+            />
+
+    </LinearLayout>
+
+
 
 </androidx.appcompat.widget.Toolbar>

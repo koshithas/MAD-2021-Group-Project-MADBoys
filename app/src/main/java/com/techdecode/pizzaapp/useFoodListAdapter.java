@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -45,10 +47,13 @@ public class useFoodListAdapter extends BaseAdapter {
     }
 
 
-    private class ViewHolder{
+
+
+
+        private class ViewHolder{
         ImageView imageView;
-        TextView txtName,txtPrice,txtType;
-        Button btn,btn2;
+        TextView txtName,txtPrice,txtType,txtId;
+        Button btn;
     }
 
 
@@ -67,6 +72,7 @@ public class useFoodListAdapter extends BaseAdapter {
             holder.txtPrice = row.findViewById(R.id.user_food_price);
             holder.txtType = row.findViewById(R.id.user_food_type);
 
+            holder.txtId = row.findViewById(R.id.user_food_id);
 
 
             row.setTag(holder);
@@ -80,6 +86,7 @@ public class useFoodListAdapter extends BaseAdapter {
         holder.txtName.setText(food.getName());
         holder.txtPrice.setText(food.getPrice());
         holder.txtType.setText(food.getType());
+         holder.txtId.setText(Integer.toString(food.getId()));
 
         byte[] foodImage = food.getImage();
         Bitmap bitmap = BitmapFactory.decodeByteArray(foodImage, 0, foodImage.length);
@@ -91,17 +98,19 @@ public class useFoodListAdapter extends BaseAdapter {
             public void onClick(View v) {
 
                 Intent intent = new Intent(context, user_inside_food_item.class);
+
                 intent.putExtra("name1",food.getName());
                 intent.putExtra("price1",food.getPrice());
                 intent.putExtra("type1",food.getType());
-                intent.putExtra("image1", foodImage);
+                intent.putExtra("image1",foodImage);
+                intent.putExtra("description1",food.getDescription());
+                intent.putExtra("Id",Integer.toString(food.getId()));
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
                 context.startActivity(intent);
 
             }
         });
-
 
 
 

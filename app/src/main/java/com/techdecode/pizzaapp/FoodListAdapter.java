@@ -44,7 +44,7 @@ public class FoodListAdapter extends BaseAdapter {
 
     private class ViewHolder{
         ImageView imageView;
-        TextView txtName,txtPrice,txtType,txtDescription;
+        TextView txtName,txtPrice,id,txtDescription;
         Button btn;
 
     }

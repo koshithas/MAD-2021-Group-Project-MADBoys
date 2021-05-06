@@ -28,7 +28,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Your Order"
+                android:text="Order Now "
+                android:fontFamily="serif-monospace"
+                android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -43,25 +45,37 @@
                 <ImageView
                     android:id="@+id/imageView234"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="230dp"
                     android:scaleType="centerCrop"
                     app:srcCompat="@drawable/sample01" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-
                     android:orientation="horizontal"
                     android:paddingLeft="10dp"
-                    android:paddingTop="15dp"
+                    android:paddingTop="10dp"
                     android:paddingRight="10dp"
                     android:paddingBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/checkout_food_Id"
+                        android:layout_width="64dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="cursive"
+                        android:text="Id"
+                        android:textColor="@color/black"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+
 
                     <TextView
                         android:id="@+id/checkout_food_name"
                         android:layout_width="64dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:fontFamily="cursive"
                         android:text="Cheese Burger"
                         android:textColor="@color/black"
                         android:textSize="25dp"
@@ -72,7 +86,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:fontFamily="cursive"
                         android:text="Type"
+                        android:textAlignment="textEnd"
                         android:textColor="@color/black"
                         android:textSize="25dp"
                         android:textStyle="bold" />
@@ -86,33 +102,37 @@
                 android:layout_marginTop="15dp"
                 android:orientation="horizontal">
 
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="monospace"
+                    android:text="Description about the Burger:"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textgView6"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/checkout_food_description"
+                    android:layout_width="64dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Delivery Charges"
+                    android:fontFamily="casual"
+                    android:padding="15dp"
+                    android:text="@string/description"
+                    android:textAlignment="textStart"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="20dp" />
 
-                <TextView
-                    android:id="@+id/texttView7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Free"
-                    android:textAlignment="viewEnd"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -126,21 +146,36 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:fontFamily="monospace"
                     android:text="Price"
+                    android:textColor="@color/red"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/lkr"
+                    android:layout_width="188dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="cursive"
+                    android:text="LKR"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/checkout_total"
-                    android:layout_width="205dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="LKR 500.00"
+                    android:fontFamily="cursive"
+                    android:text="500"
                     android:textAlignment="viewEnd"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
+
             </LinearLayout>
 
             <Button
@@ -149,23 +184,13 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="40dp"
-                android:backgroundTint="@color/yellow"
+                android:backgroundTint="@color/dark_yellow"
                 android:text="@string/place_order"
                 android:textColor="@color/black"
                 android:textAllCaps="false"
                 android:textSize="18sp" />
 
-            <Button
-                android:id="@+id/cart_button"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
 
-                android:backgroundTint="@color/yellow"
-                android:text="@string/add_cart"
-                android:textColor="@color/black"
-                android:textAllCaps="false"
-                android:textSize="18sp" />
 
         </LinearLayout>
 

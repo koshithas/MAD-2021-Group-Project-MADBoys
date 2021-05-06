@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -36,7 +37,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/inputborderround"
+        android:background="@drawable/backgroun_input"
         android:hint="@string/d_hnt_fname"
         android:inputType="textPersonName"
 
@@ -53,7 +54,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/inputborderround"
+        android:background="@drawable/backgroun_input"
         android:hint="@string/d_hnt_lname"
         android:inputType="textPersonName"
         android:paddingLeft="10dp"
@@ -70,7 +71,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/inputborderround"
+        android:background="@drawable/backgroun_input"
         android:hint="@string/d_hnt_email"
         android:inputType="textEmailAddress"
         android:paddingLeft="10dp"
@@ -86,7 +87,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/inputborderround"
+        android:background="@drawable/backgroun_input"
         android:hint="@string/d_hnt_contact"
         android:inputType="phone"
         android:maxLength="10"
@@ -104,7 +105,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/inputborderround"
+        android:background="@drawable/backgroun_input"
 
         android:hint="@string/d_hnt_address"
         android:inputType="text"
@@ -122,8 +123,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginTop="44dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/dark_yellow"
         android:text="@string/d_btn_back"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/address" />
 
@@ -133,8 +135,9 @@
         android:layout_height="51dp"
         android:layout_marginTop="44dp"
         android:layout_marginEnd="55dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/dark_yellow"
         android:text="@string/d_btn_confirm"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/address" />
 
