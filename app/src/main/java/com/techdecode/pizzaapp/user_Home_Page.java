@@ -46,13 +46,6 @@ public class user_Home_Page extends AppCompatActivity {
         String username = getIntent().getStringExtra("username1");
 
 
-       // t = findViewById(R.id.username1111);
-
-       // t.setText(username);
-
-       // String t1 = t.getText().toString();
-
-
 
         imageView = findViewById(R.id.profile_btn);
 

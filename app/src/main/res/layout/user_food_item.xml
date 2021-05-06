@@ -19,6 +19,13 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/user_food_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID"
+            android:fontFamily="sans-serif-black"
+            android:textSize="25dp"/>
+        <TextView
             android:id="@+id/user_food_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

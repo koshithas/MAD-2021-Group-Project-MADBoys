@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PizzaApp">
-        <activity android:name=".update_user_profile"></activity>
+        <activity android:name=".OrderList"></activity>
+        <activity android:name=".OrderConfirmation" />
+        <activity android:name=".InsertPayment" />
+        <activity android:name=".InsertDelivery" />
+        <activity android:name=".update_user_profile" />
         <activity android:name=".userProfile" />
         <activity android:name=".register" />
         <activity android:name=".Login" />
