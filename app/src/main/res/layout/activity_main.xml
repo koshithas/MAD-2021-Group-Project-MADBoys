@@ -65,6 +65,27 @@
                 android:text="Check Order Delails"/>
 
             <Button
+                android:id="@+id/add_driver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/dark_yellow"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Add Driver" />
+
+            <Button
+                android:id="@+id/btnnewdriverslist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/dark_yellow"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="View Driver Details"/>
+
+            <Button
+                android:id="@+id/assign_to_delivery_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/dark_yellow"
@@ -72,6 +93,18 @@
                 android:textStyle="bold"
                 android:fontFamily="sans-serif-condensed-medium"
                 android:text="Assign Delivery" />
+
+            <Button
+                android:id="@+id/view_delivery_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/dark_yellow"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="View Delivery Details" />
+
+
 
             <Button
                 android:layout_width="match_parent"

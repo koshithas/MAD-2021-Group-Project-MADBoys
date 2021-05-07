@@ -11,7 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PizzaApp">
-        <activity android:name=".OrderList"></activity>
+        <activity android:name=".Ongoing_get_order_details"></activity>
+        <activity android:name=".OngoingList" />
+        <activity android:name=".assign_order" />
+        <activity android:name=".Driver_OngoingList" />
+        <activity android:name=".driver_Add" />
+        <activity android:name=".OrderList" />
         <activity android:name=".OrderConfirmation" />
         <activity android:name=".InsertPayment" />
         <activity android:name=".InsertDelivery" />
