@@ -158,4 +158,45 @@
     <string name="date">Date :</string>
 
 
+    //delivery
+
+
+    <string name="add">add</string>
+    <string name="view">view</string>
+    <string name="oderid">Order ID</string>
+    <string name="customername">Customer Name</string>
+    <string name="number">Telephone number</string>
+    <string name="price">Price</string>
+    <string name="driverid">Driver ID</string>
+    <string name="drivername">Driver Name</string>
+    <string name="complete">Complete?</string>
+    <string name="addDrivertoOngoingOder">Add driver for ongoing oder</string>
+
+    <string name="newdriverid">Driver ID</string>
+    <string name="newdrivername">Driver Name</string>
+    <string name="newdrivernumber">Telephone number</string>
+    <string name="newdriveraddress">Address</string>
+    <string name="newdriverdob">Date of birth</string>
+    <string name="newdrivervehiclenumber">Vehicle number</string>
+    <string name="newdrivervehiclemodel">Vehicle model</string>
+    <string name="newdriveremail">Email</string>
+    <string name="newdriveradd">Add driver to system</string>
+    <string name="newdriverslist">View all drivers</string>
+    <string name="btnnewdriverupdated">Done Upadting</string>
+    <string name="editDriverDetails">Edit Driver Details</string>
+
+
+    <string name="btnadd">add</string>
+    <string name="btnview">view</string>
+    <string name="btnupdate">Update</string>
+    <string name="edtoderid">Order ID</string>
+    <string name="edtname">Customer Name</string>
+    <string name="edtnumber">Telephone number</string>
+    <string name="edtaddress">Address</string>
+    <string name="edtprice">Price</string>
+    <string name="edtdriverid">Driver ID</string>
+    <string name="edtdrivername">Driver Name</string>
+    <string name="edtcomplete">Complete?</string>
+    <string name="editOngoing">Add driver for ongoing oder</string>
+
 </resources>
