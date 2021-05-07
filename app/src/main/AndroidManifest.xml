@@ -9,23 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PizzaApp">
-        <activity android:name=".Basket">
-
-
-        </activity>
-        <activity android:name=".update_driver" >
-
-        </activity>
-        <activity android:name=".add_driver" >
+        <activity android:name=".Driver_MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".Driver_OngoingList"
+            android:label="Ongoing List"
+            android:parentActivityName=".Driver_MainActivity" />
 
-        </activity>
+
+
     </application>
 
 </manifest>
