@@ -65,7 +65,7 @@ public class user_Home_Page extends AppCompatActivity {
 
         //get all data from sqlite
 
-        Cursor cursor = Login.sqliteHelper.getdata("SELECT * FROM FOOD");
+        Cursor cursor = startup_screen.sqliteHelper.getdata("SELECT * FROM FOOD");
         list.clear();
 
         while (cursor.moveToNext()) {

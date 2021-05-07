@@ -27,7 +27,7 @@
             android:background="@drawable/backgroun_input"
             android:padding="10dp"
             android:layout_marginTop="15dp"
-            android:inputType="numberDecimal"
+            android:inputType="textPersonName"
             android:hint="@string/edtoderid" />
 
 
