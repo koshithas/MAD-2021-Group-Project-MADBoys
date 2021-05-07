@@ -1,6 +1,8 @@
 package com.techdecode.pizzaapp;
 
 public class Driver_Ongoing {
+
+
     private int id;
     private String newdriverid;
     private String newdrivername;
@@ -82,5 +84,5 @@ public class Driver_Ongoing {
     public void setNewdriverdob(String newdriverdob) {
         this.newdriverdob = newdriverdob;
     }
-}
 
+}

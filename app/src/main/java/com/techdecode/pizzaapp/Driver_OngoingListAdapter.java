@@ -78,5 +78,6 @@ public class Driver_OngoingListAdapter extends BaseAdapter {
 
         return row;
     }
-}
 
+
+}

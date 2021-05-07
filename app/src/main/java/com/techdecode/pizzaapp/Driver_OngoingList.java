@@ -1,5 +1,9 @@
 package com.techdecode.pizzaapp;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -13,10 +17,6 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.ArrayList;
 
 public class Driver_OngoingList extends AppCompatActivity {
@@ -28,7 +28,7 @@ public class Driver_OngoingList extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.driver_ongoing_list_activity);
+        setContentView(R.layout.activity_driver__ongoing_list);
 
         gridView = (GridView) findViewById(R.id.gridView);
         list = new ArrayList<>();
@@ -37,7 +37,7 @@ public class Driver_OngoingList extends AppCompatActivity {
 
         //get data from sqlite
 
-        Cursor cursor = Driver_MainActivity.sqLiteHelper.getData("SELECT * FROM DRIVERDETAILS");
+        Cursor cursor = MainActivity.sqliteHelper.getDriverData("SELECT * FROM DRIVERDETAILS");
         list.clear();
         while (cursor.moveToNext()) {
             int id = cursor.getInt(0);
@@ -71,7 +71,7 @@ public class Driver_OngoingList extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int item) {
                         if (item == 0) {
                             //update
-                            Cursor c = Driver_MainActivity.sqLiteHelper.getData("SELECT id FROM DRIVERDETAILS");
+                            Cursor c = MainActivity.sqliteHelper.getDriverData("SELECT id FROM DRIVERDETAILS");
                             ArrayList<Integer> arrID = new ArrayList<Integer>();
                             while(c.moveToNext()){
                                 arrID.add(c.getInt(0));
@@ -84,7 +84,7 @@ public class Driver_OngoingList extends AppCompatActivity {
 
                         } else {
                             //delete
-                            Cursor c = Driver_MainActivity.sqLiteHelper.getData("SELECT id FROM DRIVERDETAILS");
+                            Cursor c = MainActivity.sqliteHelper.getDriverData("SELECT id FROM DRIVERDETAILS");
                             ArrayList<Integer> arrID = new ArrayList<Integer>();
                             while(c.moveToNext()) {
                                 arrID.add(c.getInt(0));
@@ -102,7 +102,7 @@ public class Driver_OngoingList extends AppCompatActivity {
 
 
     }
-    private void showDialogUpdateDriver(Activity activity,final int position){
+    private void showDialogUpdateDriver(Activity activity, final int position){
 
         Dialog dialog = new Dialog(activity);
         dialog.setContentView(R.layout.driver_update_ongoing_activity);
@@ -124,7 +124,7 @@ public class Driver_OngoingList extends AppCompatActivity {
 
         //set height for dialog
 
-        int height = (int) (activity.getResources().getDisplayMetrics().heightPixels * 1);
+        int height = (int) (activity.getResources().getDisplayMetrics().heightPixels * 0.8);
         dialog.getWindow().setLayout(width,height);
         dialog.show();
 
@@ -133,7 +133,7 @@ public class Driver_OngoingList extends AppCompatActivity {
             public void onClick(View v) {
 
                 try {
-                    Driver_MainActivity.sqLiteHelper.updateDataDriver(
+                    MainActivity.sqliteHelper.updateDataDriver(
 
 
                             newdriverid.getText().toString().trim(),
@@ -168,8 +168,8 @@ public class Driver_OngoingList extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 try {
-                    Driver_MainActivity.sqLiteHelper.deleteDataDriver(idOngongdriver);
-                    Driver_MainActivity.sqLiteHelper.deleteDataDriver(idOngongdriver);
+                    MainActivity.sqliteHelper.deleteDataDriver(idOngongdriver);
+                    MainActivity.sqliteHelper.deleteDataDriver(idOngongdriver);
                     Toast.makeText(getApplicationContext(),"Deleted successfully",Toast.LENGTH_SHORT).show();
                 }catch (Exception e){
                     Log.e("Error in delete",e.getMessage());
@@ -190,7 +190,7 @@ public class Driver_OngoingList extends AppCompatActivity {
 
 
     private void updateOngoingListDriver(){
-        Cursor cursor = Driver_MainActivity.sqLiteHelper.getData("SELECT * FROM DRIVERDETAILS");
+        Cursor cursor = MainActivity.sqliteHelper.getDriverData("SELECT * FROM DRIVERDETAILS");
         list.clear();
         while (cursor.moveToNext()){
             int id = cursor.getInt(0);

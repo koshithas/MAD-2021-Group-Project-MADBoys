@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-   >
-
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +13,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/backgroun_input"
             android:orientation="horizontal">
@@ -23,8 +22,8 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
                 android:layout_marginTop="20dp"
+                android:layout_margin="10dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -32,7 +31,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="New DriverID"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    />
 
                 <TextView
                     android:id="@+id/samplenewdrivername"
@@ -46,106 +46,110 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="New Driver Phone Number"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/samplenewdriveraddress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New Driver Address"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:text="New Driver Address" />
 
                 <TextView
                     android:id="@+id/samplenewdriveremail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New Driver Email"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:text="New Driver Email" />
 
                 <TextView
                     android:id="@+id/samplenewdrivervehiclemodel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textStyle="bold"
                     android:text="Vehicle Model"
-                    android:textStyle="bold" />
+                    />
 
                 <TextView
                     android:id="@+id/samplenewdrivervehiclenumber"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Vehicle Number"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:text="Vehicle Number" />
 
                 <TextView
                     android:id="@+id/samplenewdriverdob"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="DOB"
-                    android:textStyle="bold" />
+                    android:text="Complete"
+                    android:textStyle="bold"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginTop="20dp"
                 android:layout_margin="10dp"
-                android:orientation="vertical">
+                android:layout_marginLeft="25dp">
 
                 <TextView
-                    android:id="@+id/txtnewdriverid"
+                    android:id="@+id/txtedtoderid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="New DriverID"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    />
 
                 <TextView
-                    android:id="@+id/txtnewdrivername"
+                    android:id="@+id/txtedtname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="New Driver Name"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txtnewdrivernumber"
+                    android:id="@+id/txtedtnumber"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="New Driver Phone Number"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"/>
 
                 <TextView
-                    android:id="@+id/txtnewdriveraddress"
+                    android:id="@+id/txtedtaddress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New Driver Address"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:text="New Driver Address" />
 
                 <TextView
-                    android:id="@+id/txtnewdriveremail"
+                    android:id="@+id/txtedtprice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New Driver Email"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:text="New Driver Email" />
 
                 <TextView
-                    android:id="@+id/txtnewdrivervehiclemodel"
+                    android:id="@+id/txtedtdriverid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textStyle="bold"
                     android:text="Vehicle Model"
-                    android:textStyle="bold" />
+                    />
 
                 <TextView
-                    android:id="@+id/txtnewdrivervehiclenumber"
+                    android:id="@+id/txtedtdrivername"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Vehicle Number"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:text="Vehicle Number" />
 
                 <TextView
-                    android:id="@+id/txtnewdriverdob"
+                    android:id="@+id/txtedtcomplete"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Complete"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"/>
 
             </LinearLayout>
         </LinearLayout>
