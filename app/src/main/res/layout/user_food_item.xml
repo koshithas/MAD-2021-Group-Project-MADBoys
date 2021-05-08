@@ -1,50 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="210dp"
-    android:layout_height="280dp"
-    android:background="#dadce0"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:background="@drawable/card_style"
     android:orientation="vertical">
 
     <ImageView
         android:id="@+id/use_food_image"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/sample01"/>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="45dp"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
 
         <TextView
             android:id="@+id/user_food_name"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
-            android:fontFamily="cursive"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/food_name"
+            android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="28dp" />
+            android:textSize="25dp" />
 
         <TextView
             android:id="@+id/user_food_type"
-            android:layout_width="110dp"
+            android:layout_width="124dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Type"
+            android:textAlignment="center"
+            android:textColor="#002efa"
+            android:textSize="25dp" />
+
+        <TextView
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:fontFamily="cursive"
-            android:text="Type"
-            android:textColor="@color/purple_700"
-            android:textSize="20dp" />
+            android:text="LKR:"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="22dp" />
+
 
         <TextView
             android:id="@+id/user_food_price"
-            android:layout_width="100dp"
+            android:layout_width="72dp"
             android:layout_height="wrap_content"
-            android:fontFamily="cursive"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/food_price"
+            android:textAlignment="center"
             android:textColor="@color/red"
             android:textSize="25dp" />
 
