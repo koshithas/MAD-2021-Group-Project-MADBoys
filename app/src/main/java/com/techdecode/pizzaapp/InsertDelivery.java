@@ -92,7 +92,6 @@ public class InsertDelivery extends AppCompatActivity {
         email = findViewById(R.id.email);
         contact= findViewById(R.id.contactNumber);
         address = findViewById(R.id.address);
-        back = findViewById(R.id.dBack);
         confirm = findViewById(R.id.dConfirm);
         name = findViewById(R.id.page_title_delivery);
 
