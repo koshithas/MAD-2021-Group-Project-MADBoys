@@ -38,7 +38,7 @@ public class userProfile extends AppCompatActivity {
 
 
         //assign profile details according to the username
-        Cursor cursor1 = startup_screen.sqliteHelper.getUserData(takeusername);
+        Cursor cursor1 = db.getUserData(takeusername);
 
         while (cursor1.moveToNext()){
             String user = cursor1.getString(0);

@@ -92,15 +92,10 @@ public class add_product extends AppCompatActivity {
 
 
                     if (s1.equals("")||s2.equals("")||s3.equals("")||s4.equals("")) {
-
                         Toast.makeText(getApplicationContext(), "Field Empty", Toast.LENGTH_SHORT).show();
-
                     }else {
-
                         if (s3.equals("Large")||s3.equals("Medium")||s3.equals("Small")) {
-
                             try {
-
                                 sqliteHelper.insertdata(
                                         edtname.getText().toString().trim(),
                                         edtprice.getText().toString().trim(),
@@ -124,7 +119,6 @@ public class add_product extends AppCompatActivity {
                             edttype.setText("");
                         }
                     }
-
                 }
             });
 

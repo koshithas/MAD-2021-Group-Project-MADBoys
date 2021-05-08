@@ -98,7 +98,10 @@ public class InsertPayment extends AppCompatActivity {
 
 
 
-        if( obj.insertData(deliveryModel.getfName(),deliveryModel.getlName(),deliveryModel.getEmail(),deliveryModel.getContact(),deliveryModel.getAddress(),cardName.getText().toString(),cardNumber.getText().toString(),exp.getText().toString(),security.getText().toString(),name.getText().toString(),name2.getText().toString(),getDateTime())){
+        if( obj.insertData(deliveryModel.getfName(),deliveryModel.getlName(),
+                deliveryModel.getEmail(),deliveryModel.getContact(),deliveryModel.getAddress(),
+                cardName.getText().toString(),cardNumber.getText().toString(),exp.getText().toString(),security.getText().toString(),
+                name.getText().toString(),name2.getText().toString(),getDateTime())){
 
             Toast.makeText(getApplicationContext(), "Order Added Successfully...", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(InsertPayment.this,user_Home_Page.class);
