@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static sqlhelper sqliteHelper;
 
-    Button b1,b2,b3,b4,b5,b6,b7,b8;
+    Button b1,b2,b3,b4,b5,b6,b7,b8,b9;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,6 +100,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(MainActivity.this, Ongoing_get_order_details.class);
+                startActivity(intent);
+            }
+        });
+
+        b9 = findViewById(R.id.view_delivery_btn);
+        b9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, OngoingList.class);
                 startActivity(intent);
             }
         });
