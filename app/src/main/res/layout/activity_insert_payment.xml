@@ -1,153 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/tv"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".InsertPayment">
-
-    <include
-        android:id="@+id/toolbar1"
-        layout="@layout/toolbar"
-
-
-        />
 
     <TextView
         android:id="@+id/page_title_payment"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:backgroundTint="@color/theme"
-        android:padding="15sp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="center"
         android:text="@string/title_payment"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="40dp" />
 
-    <EditText
-        android:id="@+id/cardOnName"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/backgroun_input"
-        android:hint="@string/p_hnt_name"
-        android:inputType="textPersonName"
-        android:padding="3dp"
-        android:paddingLeft="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/page_title_payment" />
-
-    <EditText
-        android:id="@+id/cNumber"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="23dp"
-        android:background="@drawable/backgroun_input"
-        android:hint="@string/p_hnt_number"
-        android:inputType="number"
-        android:maxLength="16"
-        android:padding="3dp"
-        android:paddingLeft="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardOnName" />
-
-    <EditText
-        android:id="@+id/exp"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/backgroun_input"
-        android:hint="@string/p_hnt_exp"
-        android:inputType="date"
-        android:padding="3dp"
-        android:paddingLeft="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cNumber" />
-
-    <EditText
-        android:id="@+id/sCode"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/backgroun_input"
-        android:hint="@string/p_hnt_scode"
-        android:inputType="number"
-        android:maxLength="3"
-        android:padding="3dp"
-        android:paddingLeft="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/exp" />
-
-
-    <Button
-        android:id="@+id/pBack"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="60dp"
-        android:textColor="@color/black"
-        android:backgroundTint="@color/dark_yellow"
-        android:onClick="@string/p_btn_back"
-        android:text="@string/p_btn_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sCode" />
+        android:layout_margin="20dp"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/pConfirm"
-        android:layout_width="wrap_content"
+
+        <EditText
+            android:id="@+id/cardOnName"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="23dp"
+            android:background="@drawable/backgroun_input"
+            android:hint="@string/p_hnt_name"
+            android:inputType="textPersonName"
+            android:padding="3dp"
+            android:paddingLeft="10dp"
+             />
+
+        <EditText
+            android:id="@+id/cNumber"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="23dp"
+            android:background="@drawable/backgroun_input"
+            android:hint="@string/p_hnt_number"
+            android:inputType="number"
+            android:maxLength="16"
+            android:padding="3dp"
+            android:paddingLeft="10dp"
+          />
+
+        <EditText
+            android:id="@+id/exp"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="23dp"
+            android:background="@drawable/backgroun_input"
+            android:hint="@string/p_hnt_exp"
+            android:inputType="date"
+            android:padding="3dp"
+            android:paddingLeft="10dp"
+           />
+        <EditText
+            android:id="@+id/sCode"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="23dp"
+            android:background="@drawable/backgroun_input"
+            android:hint="@string/p_hnt_scode"
+            android:inputType="number"
+            android:maxLength="3"
+            android:padding="3dp"
+            android:paddingLeft="10dp"
+
+           />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <Button
+            android:id="@+id/pBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/dark_yellow"
+            android:onClick="@string/p_btn_back"
+            android:text="@string/p_btn_back"
+            android:textColor="@color/black"
+           />
+
+        <Button
+            android:id="@+id/pConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+           android:layout_marginLeft="80dp"
+            android:backgroundTint="@color/dark_yellow"
+            android:text="@string/p_btn_confirm"
+            android:textColor="@color/black"
+            />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="64dp"
-        android:backgroundTint="@color/dark_yellow"
-        android:textColor="@color/black"
-        android:text="@string/p_btn_confirm"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sCode" />
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/empty1"
-        android:layout_width="15dp"
-        android:layout_height="53dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="4dp"
-        android:textColor="@color/design_default_color_surface"
-        android:textColorHighlight="@color/design_default_color_surface"
-        android:textColorHint="@color/design_default_color_background"
-        android:textColorLink="@color/design_default_color_surface"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/empty2"
-        android:layout_width="15dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="321dp"
-        android:layout_marginEnd="24dp"
-        android:textColor="@color/design_default_color_surface"
-        android:textColorHighlight="@color/design_default_color_surface"
-        android:textColorHint="@color/design_default_color_background"
-        android:textColorLink="@color/design_default_color_surface"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/empty1"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/empty1"
+            android:layout_width="15dp"
+            android:layout_height="53dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="16dp"
+            android:textColor="@color/design_default_color_surface"
+            android:textColorHighlight="@color/design_default_color_surface"
+            android:textColorHint="@color/design_default_color_background"
+            android:textColorLink="@color/design_default_color_surface"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/empty2"
+            android:layout_width="15dp"
+            android:layout_height="53dp"
+            android:layout_marginBottom="16dp"
+            android:textColor="@color/design_default_color_surface"
+            android:textColorHighlight="@color/design_default_color_surface"
+            android:textColorHint="@color/design_default_color_background"
+            android:textColorLink="@color/design_default_color_surface"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="367dp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="320dp"
+            android:layout_height="203dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/pyement_new"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

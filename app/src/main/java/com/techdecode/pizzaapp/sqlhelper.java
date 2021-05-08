@@ -105,6 +105,7 @@ public class sqlhelper extends SQLiteOpenHelper {
         contentValues.put("email",email);
         contentValues.put("contact",contact);
         contentValues.put("password",password);
+
         long ins =db.insert("user",null,contentValues);
 
         if (ins == -1){
@@ -125,9 +126,11 @@ public class sqlhelper extends SQLiteOpenHelper {
         }
     }
 
+
     public boolean emailPassword(String username, String password){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("select * from user where username= ? and password= ?",new String[]{username,password});
+
 
         if (cursor.getCount()> 0){
             return true;
@@ -135,6 +138,8 @@ public class sqlhelper extends SQLiteOpenHelper {
             return false;
         }
     }
+
+
 
 
 
@@ -248,6 +253,137 @@ public class sqlhelper extends SQLiteOpenHelper {
     }
 
 
+
+    //alwis
+
+    public void insertDataDriver(String newdriverid,String newdrivername, String newdrivernumber, String newdriveraddress, String newdriveremail, String newdrivervehiclemodel,String newdrivervehiclenumber ,String newdriverdob){
+        SQLiteDatabase database = getWritableDatabase();
+        String sql = "INSERT INTO DRIVERDETAILS VALUES(NULL,?,?,?,?,?,?,?,?)";
+
+        SQLiteStatement statement = database.compileStatement(sql);
+        statement.clearBindings();
+
+        statement.bindString(1,newdriverid);
+        statement.bindString(2,newdrivername);
+        statement.bindString(3,newdrivernumber);
+        statement.bindString(4,newdriveraddress);
+        statement.bindString(5,newdriveremail);
+        statement.bindString(6,newdrivervehiclemodel);
+        statement.bindString(7,newdrivervehiclenumber);
+        statement.bindString(8,newdriverdob);
+
+
+        statement.executeInsert();
+    }
+
+
+    public void updateDataDriver(String newdriverid,String newdrivername,String newdrivernumber,String newdriveraddress,String newdriveremail ,String newdrivervehiclemodel,String newdrivervehiclenumber,String newdriverdob,int id ){
+        SQLiteDatabase database = getWritableDatabase();
+
+        String sql = "UPDATE DRIVERDETAILS SET newdriverid = ? ,newdrivername = ? ,newdrivernumber = ?,newdriveraddress = ?,newdriveremail = ?,newdrivervehiclemodel = ?,newdrivervehiclenumber = ?,newdriverdob = ? WHERE id = ?";
+        SQLiteStatement statement = database.compileStatement(sql);
+
+
+        statement.bindString(1,newdriverid );
+        statement.bindString(2,newdrivername);
+        statement.bindString(3,newdrivernumber);
+        statement.bindString(4,newdriveraddress);
+        statement.bindString(5,newdriveremail);
+        statement.bindString(6,newdrivervehiclemodel);
+        statement.bindString(7,newdrivervehiclenumber);
+        statement.bindString(8,newdriverdob);
+        statement.bindDouble(9, (double)id);
+
+        statement.execute();
+        database.close();
+
+    }
+
+    public void deleteDataDriver(int id){
+        SQLiteDatabase database = getWritableDatabase();
+
+        String sql = "DELETE FROM DRIVERDETAILS WHERE id = ?";
+        SQLiteStatement statement = database.compileStatement(sql);
+        statement.clearBindings();
+        statement.bindDouble(1,(double)id);
+        statement.execute();
+        database.close();
+
+    }
+    public Cursor getDriverData(String sql){
+        SQLiteDatabase database = getReadableDatabase();
+        return database.rawQuery(sql,null);
+    }
+
+
+
+    public void insertDataDelivery(String edtoderid,String edtname, String edtnumber, String edtaddress,String edtprice, String edtdriverid, String edtdrivername,String edtcomplete ){
+        SQLiteDatabase database = getWritableDatabase();
+        String sql = "INSERT INTO ONGOING VALUES(NULL,?,?,?,?,?,?,?,?)";
+
+        SQLiteStatement statement = database.compileStatement(sql);
+        statement.clearBindings();
+
+        statement.bindString(1,edtoderid);
+        statement.bindString(2,edtname);
+        statement.bindString(3,edtnumber);
+        statement.bindString(4,edtaddress);
+        statement.bindString(5,edtprice);
+        statement.bindString(6,edtdriverid);
+        statement.bindString(7,edtdrivername);
+        statement.bindString(8,edtcomplete);
+
+
+
+        statement.executeInsert();
+    }
+
+
+    public void updateDataDelivery(String edtoderid,String edtname,String edtnumber,String edtaddress,String edtprice ,String edtdriverid,String edtdrivername,String edtcomplete,int id ){
+        SQLiteDatabase database = getWritableDatabase();
+
+        String sql = "UPDATE ONGOING SET edtoderid = ? ,edtname = ? ,edtnumber = ?,edtaddress = ?,edtprice = ?,edtdriverid = ?,edtdrivername = ?,edtcomplete = ? WHERE id = ?";
+        SQLiteStatement statement = database.compileStatement(sql);
+
+
+        statement.bindString(1,edtoderid );
+        statement.bindString(2,edtname);
+        statement.bindString(3,edtnumber);
+        statement.bindString(4,edtaddress);
+        statement.bindString(5,edtprice);
+        statement.bindString(6,edtdriverid);
+        statement.bindString(7,edtdrivername);
+        statement.bindString(8,edtcomplete);
+        statement.bindDouble(9, (double)id);
+
+        statement.execute();
+        database.close();
+
+    }
+
+    public void deleteDataDelivery(int id){
+        SQLiteDatabase database = getWritableDatabase();
+
+        String sql = "DELETE FROM ONGOING WHERE id = ?";
+        SQLiteStatement statement = database.compileStatement(sql);
+        statement.clearBindings();
+        statement.bindDouble(1,(double)id);
+        statement.execute();
+        database.close();
+
+    }
+    public Cursor getDataDelivery(String sql){
+        SQLiteDatabase database = getReadableDatabase();
+        return database.rawQuery(sql,null);
+    }
+
+    public Cursor getOrderDetailsToDelivery(String id){
+
+        SQLiteDatabase database = getReadableDatabase();
+        return database.rawQuery("select * from Orders where orderId= ?",new String[]{id});
+
+
+    }
 
 
 

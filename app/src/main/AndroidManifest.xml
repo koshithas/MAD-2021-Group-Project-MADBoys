@@ -6,20 +6,26 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="Burgur King"
+        android:icon="@drawable/burger"
+        android:label="MY BURGER"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PizzaApp">
-        <activity android:name=".OrderList"></activity>
+        <activity android:name=".Ongoing_get_order_details"></activity>
+        <activity android:name=".OngoingList" android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+        <activity android:name=".assign_order" android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+        <activity android:name=".Driver_OngoingList" android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+        <activity android:name=".driver_Add" android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+        <activity android:name=".OrderList" android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
         <activity android:name=".OrderConfirmation" />
         <activity android:name=".InsertPayment" />
         <activity android:name=".InsertDelivery" />
-        <activity android:name=".update_user_profile" />
-        <activity android:name=".userProfile" />
-        <activity android:name=".register" />
-        <activity android:name=".Login" />
-        <activity android:name=".startup_screen">
+        <activity android:name=".update_user_profile" android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+        <activity android:name=".userProfile" android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity android:name=".register" android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
+        <activity android:name=".Login" android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity android:name=".startup_screen" android:theme="@style/Theme.AppCompat.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,9 +34,10 @@
         </activity>
         <activity android:name=".user_inside_food_item" />
         <activity android:name=".user_Home_Page" />
-        <activity android:name=".add_product" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".add_product" android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+        <activity android:name=".MainActivity" android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
         <activity
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             android:name=".admin_food_list"
             android:label="Food List"
             android:parentActivityName=".add_product" />

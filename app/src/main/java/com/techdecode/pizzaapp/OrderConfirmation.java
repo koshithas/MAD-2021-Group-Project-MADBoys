@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 public class OrderConfirmation extends AppCompatActivity {
 
-    TextView ViewFoodName,viewFoodType,unitPrice,viewFoodQuantity,viewTotal;
+    TextView ViewFoodName,viewFoodType,unitPrice,viewFoodQuantity,viewTotal,viewFoodId;
     ImageView img;
     private Button qMinusBtn, qPlusBtn,btn;
     private int foodQuantity=1;
@@ -37,7 +37,8 @@ public class OrderConfirmation extends AppCompatActivity {
         //startActivities(i);
 
 
-        ViewFoodName.setText(Name );
+        ViewFoodName.setText(Name);
+        ViewFoodName.setText(Name);
         ViewFoodName.setText(Name);
         viewFoodType.setText(type);
         unitPrice.setText(price);
@@ -74,7 +75,6 @@ public class OrderConfirmation extends AppCompatActivity {
 
     private void init(){
         ViewFoodName = findViewById(R.id.viewFoodName);
-
         viewFoodType = findViewById(R.id.viewFoodType);
         unitPrice = findViewById(R.id.viewUnitPrice);
         viewFoodQuantity =findViewById(R.id.food_quantity);
