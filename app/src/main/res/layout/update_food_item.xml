@@ -40,7 +40,6 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/backgroun_input"
             android:padding="10dp"
-            style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
             android:hint="@string/food_price"
             android:inputType="number"/>
 
@@ -56,7 +55,6 @@
             android:background="@drawable/backgroun_input"
             android:padding="10dp"
             android:layout_marginTop="20dp"
-            style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
             android:hint="@string/food_type"/>
 
 
@@ -66,12 +64,11 @@
             android:id="@+id/update_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             app:counterEnabled="true"
             app:counterMaxLength="100"
             android:background="@drawable/backgroun_input"
             android:padding="10dp"
-            style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
             android:hint="@string/food_description"
             android:inputType="text"/>
 
