@@ -19,7 +19,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="88dp"
-        android:background="@drawable/backgroun_input"
         android:backgroundTint="@color/theme"
         android:padding="15sp"
         android:text="@string/title_payment"
@@ -128,8 +127,8 @@
         android:id="@+id/empty1"
         android:layout_width="15dp"
         android:layout_height="53dp"
-        android:layout_marginEnd="7dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="4dp"
         android:textColor="@color/design_default_color_surface"
         android:textColorHighlight="@color/design_default_color_surface"
         android:textColorHint="@color/design_default_color_background"
@@ -141,11 +140,14 @@
         android:id="@+id/empty2"
         android:layout_width="15dp"
         android:layout_height="53dp"
+        android:layout_marginStart="321dp"
+        android:layout_marginEnd="24dp"
         android:textColor="@color/design_default_color_surface"
         android:textColorHighlight="@color/design_default_color_surface"
         android:textColorHint="@color/design_default_color_background"
         android:textColorLink="@color/design_default_color_surface"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="321dp" />
+        app:layout_constraintEnd_toStartOf="@+id/empty1"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

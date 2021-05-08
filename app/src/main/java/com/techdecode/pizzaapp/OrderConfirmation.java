@@ -41,6 +41,7 @@ public class OrderConfirmation extends AppCompatActivity {
         ViewFoodName.setText(Name);
         viewFoodType.setText(type);
         unitPrice.setText(price);
+        viewTotal.setText(price);
 
         qMinusBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,26 +80,36 @@ public class OrderConfirmation extends AppCompatActivity {
         viewFoodQuantity =findViewById(R.id.food_quantity);
         qMinusBtn =findViewById(R.id.q_minus_btn);
         qPlusBtn =findViewById(R.id.q_plus_btn);
-        //viewTotal =findViewById(R.id.totalView);
+        viewTotal =findViewById(R.id.totalPriceView);
         btn = findViewById(R.id.btn_confirmation);
         img = findViewById(R.id.order_confirm_image);
 
 
     }
     private void DecreaseQuantity()
-    {
+    { int unitP =Integer.parseInt(unitPrice.getText().toString());
         if(foodQuantity > 1)
         {
             foodQuantity = foodQuantity - 1;
             viewFoodQuantity.setText(String.valueOf(foodQuantity));
+            int Total =unitP *foodQuantity;
+            String setNewTotal =String.valueOf(Total);
+            viewTotal.setText(setNewTotal);
+
 
 
         }
     }
 
-    private void IncreaseQuantity()
-    {
-        foodQuantity = foodQuantity + 1;
-        viewFoodQuantity.setText(String.valueOf(foodQuantity));
-    }
+    private void IncreaseQuantity(){
+        int unitP =Integer.parseInt(unitPrice.getText().toString());
+         {
+             foodQuantity = foodQuantity + 1;
+             viewFoodQuantity.setText(String.valueOf(foodQuantity));
+             int Total =unitP *foodQuantity;
+             String setNewTotal =String.valueOf(Total);
+             viewTotal.setText(setNewTotal);
+
+    }}
+
 }
