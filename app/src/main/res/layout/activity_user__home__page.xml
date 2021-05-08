@@ -4,51 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bacground_home"
     tools:context=".user_Home_Page">
 
-
-    <include
-        android:id="@+id/toolbar1"
-        layout="@layout/toolbar"
-        />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar1"
         android:orientation="vertical">
 
 
-        <SearchView
-            android:id="@+id/food_search_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:queryHint="@string/search_food_here"
-            android:iconifiedByDefault="false"
-            android:layout_marginLeft="10dp"
-            android:layout_margin="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/backgroun_input"
-            android:textSize="18sp"/>
+
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
             android:orientation="vertical"
             >
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="62dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+
+                    android:src="@drawable/ic_baseline_bar_chart_24" />
+
+
+                <TextView
+                    android:layout_width="165dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="cursive"
+                    android:text="My Burger"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="40dp"
+                    android:textStyle="bold" />
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/ic_baseline_shopping_cart_24" />
+
+
+
+            </LinearLayout>
             <GridView
                 android:id="@+id/grideview12"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@id/food_search_bar"
+                android:layout_marginTop="20dp"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
+                android:horizontalSpacing="10dp"
+                android:verticalSpacing="15dp"
                 android:numColumns="auto_fit"
+                android:scrollbars="vertical"
                 tools:layout_editor_absoluteX="188dp"
                 tools:layout_editor_absoluteY="213dp"
-                tools:listitem="@layout/user_food_item"
+
 
                 />
 

@@ -58,6 +58,7 @@ public class user_inside_food_item extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), OrderConfirmation.class);
                 i.putExtra("foodName", id);
+                i.putExtra("foodName11", name);
                 i.putExtra("foodPrice", price);
                 i.putExtra("foodNType", type);
                 i.putExtra("foodImage",byteArray);

@@ -15,18 +15,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.logging.LogRecord;
 
-public class useFoodListAdapter extends BaseAdapter {
+public class useFoodListAdapter extends BaseAdapter implements Filterable  {
 
     private Context context;
     private int layout;
     private ArrayList<Food> foodList;
+    private ArrayList<Food> foodListAll;
 
 
     public useFoodListAdapter(Context context, int layout, ArrayList<Food> foodList) {
         this.context = context;
         this.layout = layout;
         this.foodList = foodList;
+        this.foodListAll = new ArrayList<>(foodList);
     }
 
 
@@ -47,10 +51,7 @@ public class useFoodListAdapter extends BaseAdapter {
     }
 
 
-
-
-
-        private class ViewHolder{
+    private class ViewHolder{
         ImageView imageView;
         TextView txtName,txtPrice,txtType,txtId;
         Button btn;
@@ -72,7 +73,7 @@ public class useFoodListAdapter extends BaseAdapter {
             holder.txtPrice = row.findViewById(R.id.user_food_price);
             holder.txtType = row.findViewById(R.id.user_food_type);
 
-            holder.txtId = row.findViewById(R.id.user_food_id);
+       //     holder.txtId = row.findViewById(R.id.user_food_id);
 
 
             row.setTag(holder);
@@ -86,7 +87,7 @@ public class useFoodListAdapter extends BaseAdapter {
         holder.txtName.setText(food.getName());
         holder.txtPrice.setText(food.getPrice());
         holder.txtType.setText(food.getType());
-         holder.txtId.setText(Integer.toString(food.getId()));
+    //     holder.txtId.setText(Integer.toString(food.getId()));
 
         byte[] foodImage = food.getImage();
         Bitmap bitmap = BitmapFactory.decodeByteArray(foodImage, 0, foodImage.length);
@@ -116,4 +117,45 @@ public class useFoodListAdapter extends BaseAdapter {
 
         return row;
     }
+
+    @Override
+    public Filter getFilter() {
+        return filter;
+    }
+
+    Filter filter = new Filter() {
+        @Override
+        //run on background threads
+        protected FilterResults performFiltering(CharSequence constraint) {
+
+            ArrayList<Food> filteredFood = new ArrayList<>();
+
+            if (constraint.toString().isEmpty()){
+                filteredFood.addAll(foodListAll);
+            }else {
+                for (Food food: foodListAll){
+
+                    if (food.toString().toLowerCase().contains(constraint.toString().toLowerCase())){
+                        filteredFood.add(food);
+                    }
+                }
+            }
+
+            FilterResults filterResults = new FilterResults();
+            filterResults.values = filteredFood;
+            return filterResults;
+        }
+
+        //run on ui thread
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults filterResults) {
+            foodList.clear();
+            foodList.addAll((Collection<? extends Food>) filterResults.values);
+            notifyDataSetChanged();
+
+        }
+    };
+
+
+
 }

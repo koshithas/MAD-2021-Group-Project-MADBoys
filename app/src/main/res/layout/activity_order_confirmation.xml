@@ -7,16 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".OrderConfirmation">
 
-    <include
-        android:id="@+id/toolbar1"
-        layout="@layout/toolbar"
-
-        />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_below="@id/toolbar1"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp">
 
         <LinearLayout
             android:layout_marginTop="40dp"
@@ -180,6 +175,17 @@
                 android:textAllCaps="false"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/order_confirm_food_Id"
+                android:layout_width="7dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="cursive"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 

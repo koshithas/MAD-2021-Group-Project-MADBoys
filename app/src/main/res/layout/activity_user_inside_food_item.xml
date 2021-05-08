@@ -6,15 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".user_inside_food_item">
 
-    <include
-        android:id="@+id/toolbar1"
-        layout="@layout/toolbar"/>
+
 
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar1">
+        android:layout_marginTop="20dp"
+       >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,6 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:background="@color/black"
                 android:orientation="vertical">
 
                 <ImageView
@@ -58,17 +58,6 @@
                     android:paddingRight="10dp"
                     android:paddingBottom="10dp">
 
-                    <TextView
-                        android:id="@+id/checkout_food_Id"
-                        android:layout_width="64dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="cursive"
-                        android:text="Id"
-                        android:textColor="@color/black"
-                        android:textSize="25dp"
-                        android:textStyle="bold" />
-
 
                     <TextView
                         android:id="@+id/checkout_food_name"
@@ -77,7 +66,7 @@
                         android:layout_weight="1"
                         android:fontFamily="cursive"
                         android:text="Cheese Burger"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="25dp"
                         android:textStyle="bold" />
 
@@ -89,7 +78,7 @@
                         android:fontFamily="cursive"
                         android:text="Type"
                         android:textAlignment="textEnd"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="25dp"
                         android:textStyle="bold" />
 
@@ -128,6 +117,7 @@
                     android:fontFamily="casual"
                     android:padding="15dp"
                     android:text="@string/description"
+
                     android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textSize="20dp" />
@@ -189,6 +179,16 @@
                 android:textColor="@color/black"
                 android:textAllCaps="false"
                 android:textSize="18sp" />
+            <TextView
+                android:id="@+id/checkout_food_Id"
+                android:layout_width="7dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="cursive"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:textStyle="bold" />
 
 
 
