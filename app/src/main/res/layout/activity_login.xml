@@ -12,11 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="68dp"
         android:layout_marginTop="20dp"
-        android:fontFamily="casual"
-        android:text=" Welcome"
+        android:fontFamily="sans-serif-black"
+        android:text="Welcome"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="40dp" />
+        android:textColorHighlight="#EE2222"
+        android:textColorHint="#FFFFFF"
+        android:textSize="55dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,11 +27,10 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@drawable/burger"
+            android:layout_width="197dp"
+            android:layout_height="192dp"
             android:layout_marginLeft="80dp"
-            />
+            android:src="@drawable/b1" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -74,11 +75,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="cursive"
             android:layout_marginTop="30dp"
-            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:text=" New For The MyBurger ?"
             android:textColor="@color/black"
-            android:text=" New For The MyBurger ?" />
+            android:textSize="15dp" />
 
         <Button
            android:id="@+id/direct_signUp"

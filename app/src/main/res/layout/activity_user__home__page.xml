@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark_yellow"
     tools:context=".user_Home_Page">
 
 
@@ -28,7 +27,6 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
-
                     android:src="@drawable/ic_baseline_bar_chart_24" />
 
 
@@ -38,6 +36,7 @@
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-black"
                     android:text="My Burger"
+                    android:textColor="@color/black"
                     android:textAlignment="center"
                     android:textSize="40dp"
                    />
@@ -48,7 +47,7 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="20dp"
-                    android:src="@drawable/ic_baseline_shopping_cart_24" />
+                    android:src="@drawable/ic_baseline_shopping_bag_24" />
 
 
 
