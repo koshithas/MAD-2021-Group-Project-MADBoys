@@ -30,7 +30,7 @@
                     android:id="@+id/samplenewdriverid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New DriverID"
+                    android:text="DeliveryID"
                     android:textStyle="bold"
                     />
 
@@ -38,14 +38,14 @@
                     android:id="@+id/samplenewdrivername"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New Driver Name"
+                    android:text="Customer Name"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/samplenewdrivernumber"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New Driver Phone Number"
+                    android:text="Customer Phone Number"
                     android:textStyle="bold"/>
 
                 <TextView
@@ -53,21 +53,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:text="New Driver Address" />
+                    android:text="Customer Address" />
 
                 <TextView
                     android:id="@+id/samplenewdriveremail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:text="New Driver Email" />
+                    android:text="Price" />
 
                 <TextView
                     android:id="@+id/samplenewdrivervehiclemodel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:text="Vehicle Model"
+                    android:text="DriverID"
                     />
 
                 <TextView
@@ -75,14 +75,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:text="Vehicle Number" />
-
+                    android:text="Driver Name" />
                 <TextView
-                    android:id="@+id/samplenewdriverdob"
+                    android:id="@+id/samplenewdrivervehicl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Complete"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:text="Complete?" />
+
+
             </LinearLayout>
 
             <LinearLayout

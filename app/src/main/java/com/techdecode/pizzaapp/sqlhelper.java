@@ -385,7 +385,10 @@ public class sqlhelper extends SQLiteOpenHelper {
 
     }
 
-
-
+    public Cursor getOrderIDList()
+    {
+        SQLiteDatabase database = getReadableDatabase();
+        return database.rawQuery("select OrderId from Orders",null);
+    }
 
 }

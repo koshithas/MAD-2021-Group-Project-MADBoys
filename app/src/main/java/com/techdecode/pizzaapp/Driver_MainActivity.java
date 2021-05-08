@@ -36,35 +36,50 @@ public class Driver_MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                try {
-                    sqLiteHelper.insertDataDriver(
-                            newdriverid.getText().toString().trim(),
-                            newdrivername.getText().toString().trim(),
-                            newdrivernumber.getText().toString().trim(),
-                            newdriveraddress.getText().toString().trim(),
-                            newdriveremail.getText().toString().trim(),
-                            newdrivervehiclemodel.getText().toString().trim(),
-                            newdrivervehiclenumber.getText().toString().trim(),
-                            newdriverdob.getText().toString().trim()
+                String s1 = newdriverid.getText().toString();
+                String s2 =  newdrivername.getText().toString();
+                String s3 =  newdrivernumber.getText().toString();
+                String s4 =  newdriveraddress.getText().toString();
+                String s5 =  newdriveremail.getText().toString();
+                String s6 =  newdrivervehiclemodel.getText().toString();
+                String s7 =  newdrivervehiclenumber.getText().toString();
+                String s8 =  newdriverdob.getText().toString();
 
-
-
-
-                    );
-                    emailValidaion(newdriveremail);
-                    Toast.makeText(getApplicationContext(),"Added successfully",Toast.LENGTH_SHORT).show();
-                    newdriverid.setText("");
-                    newdrivername.setText("");
-                    newdrivernumber.setText("");
-                    newdriveraddress.setText("");
-                    newdriveremail.setText("");
-                    newdrivervehiclemodel.setText("");
-                    newdrivervehiclenumber.setText("");
-                    newdriverdob.setText("");
-
-                }catch (Exception e){
-                    e.printStackTrace();
+                if(s1.equals("")||s2.equals("")||s3.equals("")||s4.equals("")||s5.equals("")||s6.equals("")||s7.equals("")||s8.equals("")){
+                    Toast.makeText(getApplicationContext(), "Field Empty", Toast.LENGTH_SHORT).show();
                 }
+                else{
+                    try {
+                        sqLiteHelper.insertDataDriver(
+                                newdriverid.getText().toString().trim(),
+                                newdrivername.getText().toString().trim(),
+                                newdrivernumber.getText().toString().trim(),
+                                newdriveraddress.getText().toString().trim(),
+                                newdriveremail.getText().toString().trim(),
+                                newdrivervehiclemodel.getText().toString().trim(),
+                                newdrivervehiclenumber.getText().toString().trim(),
+                                newdriverdob.getText().toString().trim()
+
+
+
+
+                        );
+                        emailValidaion(newdriveremail);
+                        Toast.makeText(getApplicationContext(),"Added successfully",Toast.LENGTH_SHORT).show();
+                        newdriverid.setText("");
+                        newdrivername.setText("");
+                        newdrivernumber.setText("");
+                        newdriveraddress.setText("");
+                        newdriveremail.setText("");
+                        newdrivervehiclemodel.setText("");
+                        newdrivervehiclenumber.setText("");
+                        newdriverdob.setText("");
+
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                }
+
 
             }
         });

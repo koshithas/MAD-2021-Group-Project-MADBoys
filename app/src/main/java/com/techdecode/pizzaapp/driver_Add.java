@@ -35,34 +35,50 @@ public class driver_Add extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                try {
-                    sqLiteHelper.insertDataDriver(
-                            newdriverid.getText().toString().trim(),
-                            newdrivername.getText().toString().trim(),
-                            newdrivernumber.getText().toString().trim(),
-                            newdriveraddress.getText().toString().trim(),
-                            newdriveremail.getText().toString().trim(),
-                            newdrivervehiclemodel.getText().toString().trim(),
-                            newdrivervehiclenumber.getText().toString().trim(),
-                            newdriverdob.getText().toString().trim()
+                String n1 = newdriverid.getText().toString();
+                String n2 =newdrivername.getText().toString();
+                String n3 =newdrivernumber.getText().toString();
+                String n4 = newdriveraddress.getText().toString();
+                String n5 =newdriveremail.getText().toString();
+                String n6 =newdrivervehiclemodel.getText().toString();
+                String n7 =newdrivervehiclenumber.getText().toString();
+                String n8 =newdriverdob.getText().toString();
+
+
+                if(n1.equals("")||n2.equals("")||n3.equals("")||n4.equals("")||n5.equals("")||n6.equals("")||n7.equals("")||n8.equals("")){
+                    Toast.makeText(getApplicationContext(), "Field Empty", Toast.LENGTH_SHORT).show();
+                }else{
+
+
+                    try {
+                        sqLiteHelper.insertDataDriver(
+                                newdriverid.getText().toString().trim(),
+                                newdrivername.getText().toString().trim(),
+                                newdrivernumber.getText().toString().trim(),
+                                newdriveraddress.getText().toString().trim(),
+                                newdriveremail.getText().toString().trim(),
+                                newdrivervehiclemodel.getText().toString().trim(),
+                                newdrivervehiclenumber.getText().toString().trim(),
+                                newdriverdob.getText().toString().trim()
 
 
 
 
-                    );
-                    emailValidaion(newdriveremail);
-                    Toast.makeText(getApplicationContext(),"Added successfully",Toast.LENGTH_SHORT).show();
-                    newdriverid.setText("");
-                    newdrivername.setText("");
-                    newdrivernumber.setText("");
-                    newdriveraddress.setText("");
-                    newdriveremail.setText("");
-                    newdrivervehiclemodel.setText("");
-                    newdrivervehiclenumber.setText("");
-                    newdriverdob.setText("");
+                        );
 
-                }catch (Exception e){
-                    e.printStackTrace();
+                        Toast.makeText(getApplicationContext(),"Added successfully",Toast.LENGTH_SHORT).show();
+                        newdriverid.setText("");
+                        newdrivername.setText("");
+                        newdrivernumber.setText("");
+                        newdriveraddress.setText("");
+                        newdriveremail.setText("");
+                        newdrivervehiclemodel.setText("");
+                        newdrivervehiclenumber.setText("");
+                        newdriverdob.setText("");
+
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
                 }
 
             }

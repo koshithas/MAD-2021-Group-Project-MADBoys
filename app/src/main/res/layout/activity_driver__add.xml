@@ -26,7 +26,7 @@
             android:background="@drawable/backgroun_input"
             android:padding="10dp"
             android:layout_marginTop="15dp"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:hint="@string/newdriverid" />
 
         <EditText
@@ -48,7 +48,7 @@
             android:background="@drawable/backgroun_input"
             android:padding="10dp"
             android:layout_marginTop="15dp"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:hint="@string/newdrivernumber" />
 
         <EditText
@@ -70,7 +70,7 @@
             android:background="@drawable/backgroun_input"
             android:padding="10dp"
             android:layout_marginTop="15dp"
-            android:inputType="textPersonName"
+            android:inputType="textEmailAddress"
             android:hint="@string/newdriveremail" />
 
         <EditText
@@ -103,8 +103,9 @@
             android:background="@drawable/backgroun_input"
             android:padding="10dp"
             android:layout_marginTop="15dp"
-            android:inputType="textPersonName"
-            android:hint="@string/newdriverdob" />
+            android:inputType="date"
+            android:hint="@string/newdriverdob"
+            />
 
 
 
