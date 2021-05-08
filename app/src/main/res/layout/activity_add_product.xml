@@ -14,7 +14,8 @@
     />
 
     <LinearLayout
-        android:layout_width="362dp"
+
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:orientation="vertical"
@@ -38,7 +39,6 @@
 
             <EditText
                 android:id="@+id/admin_food_name"
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/backgroun_input"
@@ -50,7 +50,6 @@
 
             <EditText
                 android:id="@+id/admin_food_price"
-                style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -62,7 +61,6 @@
 
             <EditText
                 android:id="@+id/admin_food_type"
-                style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -100,7 +98,6 @@
 
             <EditText
                 android:id="@+id/admin_food_description"
-                style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"

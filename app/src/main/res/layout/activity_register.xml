@@ -31,9 +31,9 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/burger"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:src="@drawable/register_profile"
                 android:layout_marginLeft="80dp"
                 />
 
@@ -52,7 +52,6 @@
 
             <EditText
                 android:id="@+id/register_email"
-                style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -64,7 +63,6 @@
 
             <EditText
                 android:id="@+id/register_contactNumber"
-                style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -77,7 +75,6 @@
 
             <EditText
                 android:id="@+id/register_password"
-                style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -89,7 +86,6 @@
                 app:counterMaxLength="100" />
             <EditText
                 android:id="@+id/register_confirmPassword"
-                style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"

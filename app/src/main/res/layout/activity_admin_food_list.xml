@@ -24,6 +24,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:gravity="center"
+            android:background="@color/dark_yellow"
             android:layout_margin="20dp"
             android:verticalSpacing="15dp"
             android:layout_below="@id/toolbar123"
