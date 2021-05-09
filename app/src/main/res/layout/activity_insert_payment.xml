@@ -14,14 +14,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-black"
+        android:textColor="@color/black"
         android:textAlignment="center"
+        android:layout_marginBottom="30dp"
         android:text="@string/title_payment"
         android:textSize="40dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:background="@drawable/card_style_2"
+       android:layout_margin="20dp"
+        android:padding="20dp"
         android:orientation="vertical">
 
 
@@ -87,27 +91,16 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
-        <Button
-            android:id="@+id/pBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="@color/dark_yellow"
-            android:onClick="@string/p_btn_back"
-            android:text="@string/p_btn_back"
-            android:textColor="@color/black"
-           />
+        android:layout_height="wrap_content"
+        >
 
         <Button
             android:id="@+id/pConfirm"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-           android:layout_marginLeft="80dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:backgroundTint="@color/dark_yellow"
             android:text="@string/p_btn_confirm"
             android:textColor="@color/black"
@@ -124,44 +117,41 @@
         android:orientation="horizontal">
 
 
-        <TextView
-            android:id="@+id/empty1"
-            android:layout_width="15dp"
-            android:layout_height="53dp"
-            android:layout_marginEnd="7dp"
-            android:layout_marginBottom="16dp"
-            android:textColor="@color/design_default_color_surface"
-            android:textColorHighlight="@color/design_default_color_surface"
-            android:textColorHint="@color/design_default_color_background"
-            android:textColorLink="@color/design_default_color_surface"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <TextView
-            android:id="@+id/empty2"
-            android:layout_width="15dp"
-            android:layout_height="53dp"
-            android:layout_marginBottom="16dp"
-            android:textColor="@color/design_default_color_surface"
-            android:textColorHighlight="@color/design_default_color_surface"
-            android:textColorHint="@color/design_default_color_background"
-            android:textColorLink="@color/design_default_color_surface"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="367dp" />
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="320dp"
-            android:layout_height="203dp"
-            android:layout_marginBottom="16dp"
-            android:src="@drawable/pyement_new"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/paement_new"/>
+
 
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/empty1"
+        android:layout_width="15dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/design_default_color_surface"
+        android:textColorHighlight="@color/design_default_color_surface"
+        android:textColorHint="@color/design_default_color_background"
+        android:textColorLink="@color/design_default_color_surface"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/empty2"
+        android:layout_width="15dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/design_default_color_surface"
+        android:textColorHighlight="@color/design_default_color_surface"
+        android:textColorHint="@color/design_default_color_background"
+        android:textColorLink="@color/design_default_color_surface"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="367dp" />
+
 
 
 

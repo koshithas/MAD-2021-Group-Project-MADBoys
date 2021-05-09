@@ -16,14 +16,25 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-black"
+        android:textColor="@color/black"
         android:textAlignment="center"
         android:text="@string/title_delivery"
         android:textSize="40dp" />
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:src="@drawable/delivery1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/card_style_2"
         android:orientation="vertical">
 
         <EditText
@@ -96,15 +107,14 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"            android:layout_marginEnd="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/backgroun_input"
             android:hint="@string/d_hnt_address"
             android:inputType="text"
             android:textStyle="normal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/contactNumber" />
+            />
 
 
     </LinearLayout>
@@ -113,24 +123,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/dBack"
-            android:layout_width="108dp"
-            android:layout_height="54dp"
-            android:layout_marginLeft="55dp"
-            android:backgroundTint="@color/dark_yellow"
-            android:text="@string/d_btn_back"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/address" />
-
 
 
         <Button
             android:id="@+id/dConfirm"
-            android:layout_width="108dp"
+            android:layout_width="match_parent"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
             android:layout_height="51dp"
-           android:layout_marginLeft="80dp"
             android:backgroundTint="@color/dark_yellow"
             android:text="@string/d_btn_confirm"
             android:textColor="@color/black"
@@ -139,16 +139,6 @@
 
 
     </LinearLayout>
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="139dp"
-        android:src="@drawable/delivery1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
 
 
 
