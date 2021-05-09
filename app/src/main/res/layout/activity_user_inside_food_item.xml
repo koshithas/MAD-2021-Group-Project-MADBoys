@@ -21,17 +21,14 @@
         android:textSize="35dp"
         android:textStyle="bold" />
 
-
-
-
     <LinearLayout
         android:id="@+id/layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/textView3"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/textView3"
             android:background="@drawable/card_style_2"
             android:orientation="vertical">
 
