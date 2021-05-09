@@ -22,7 +22,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="@string/newdriverid"
-                    android:inputType="textPersonName" />
+                    android:inputType="number" />
 
                 <EditText
                     android:id="@+id/newdrivername"
@@ -36,7 +36,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="@string/newdrivernumber"
-                    android:inputType="textPersonName" />
+                    android:inputType="number" />
 
                 <EditText
                     android:id="@+id/newdriveraddress"
@@ -73,7 +73,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="@string/newdriverdob"
-                    android:inputType="textPersonName" />
+                    android:inputType="date" />
 
                 <Button
                     android:id="@+id/btnnewdriverupdated"

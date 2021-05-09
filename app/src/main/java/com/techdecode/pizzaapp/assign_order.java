@@ -31,7 +31,7 @@ public class assign_order extends AppCompatActivity {
 
         sqliteHelper = new sqlhelper(this, "FoodDB.sqlite",null, 1);
 
-        sqLiteHelper.queryData("CREATE TABLE IF NOT EXISTS ONGOING(ID INTEGER PRIMARY KEY AUTOINCREMENT,edtoderid VARCHAR, edtname VARCHAR,edtnumber VARCHAR,edtaddress VERCHAR,edtprice VARCHAR,edtdriverid VARCHAR,edtdrivername VARCHAR, edtcomplete VARCHAR  )");
+        sqLiteHelper.queryData("CREATE TABLE IF NOT EXISTS ONGOING(ID INTEGER PRIMARY KEY AUTOINCREMENT,edtoderid VARCHAR, edtname VARCHAR,edtnumber VARCHAR,edtaddress VARCHAR,edtprice VARCHAR,edtdriverid VARCHAR,edtdrivername VARCHAR, edtcomplete VARCHAR  )");
 
 
 

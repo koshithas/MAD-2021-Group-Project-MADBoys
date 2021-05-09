@@ -43,43 +43,30 @@ public class Ongoing_get_order_details extends AppCompatActivity {
         goBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 String o1 = getOrderId.getText().toString();
-
                 if(o1.equals("")){
                     Toast.makeText(getApplicationContext(), "Field Empty", Toast.LENGTH_SHORT).show();
                 }else{
                     String orderID = getOrderId.getText().toString();
-
                     Intent intent = new Intent(Ongoing_get_order_details.this, assign_order.class);
                     intent.putExtra("orderID",orderID);
                     startActivity(intent);
                 }
-
-
-
-
             }
         });
-
         viewoderIDlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Cursor res = db.getOrderIDList();
-
                 StringBuffer buffer = new StringBuffer();
                 while (res.moveToNext()){
                     buffer.append("orderID:"+res.getString(0)+"\n\n");
-
                 }
-
                 AlertDialog.Builder builder = new AlertDialog.Builder(Ongoing_get_order_details.this);
                 builder.setCancelable(true);
                 builder.setTitle("Oder IDs of oders");
                 builder.setMessage(buffer.toString());
                 builder.show();
-
             }
         });
 
