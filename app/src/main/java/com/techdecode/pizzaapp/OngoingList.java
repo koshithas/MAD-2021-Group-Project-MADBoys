@@ -132,28 +132,37 @@ public class OngoingList extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                try {
-                    MainActivity.sqliteHelper.updateDataDelivery(
-
-
-                            edtoderid.getText().toString().trim(),
-                            edtname.getText().toString().trim(),
-                            edtnumber.getText().toString().trim(),
-                            edtaddress.getText().toString().trim(),
-                            edtprice.getText().toString().trim(),
-                            edtdriverid.getText().toString().trim(),
-                            edtdrivername.getText().toString().trim(),
-                            edtcomplete.getText().toString().trim(),
-                            position
-
-                    );
-
-                    dialog.dismiss();
-                    Toast.makeText(getApplicationContext(),"Added successfully",Toast.LENGTH_SHORT).show();
-                }catch (Exception error){
-                    Log.e("Error",error.getMessage());
+                String s1 = edtoderid.getText().toString();
+                String s2 = edtname.getText().toString();
+                String s3 = edtnumber.getText().toString();
+                String s4 = edtaddress.getText().toString();
+                String s5 = edtprice.getText().toString();
+                String s6 = edtdriverid.getText().toString();
+                String s7 = edtdrivername.getText().toString();
+                String s8 = edtcomplete.getText().toString().trim();
+                if (s1.equals("") || s2.equals("") || s3.equals("") || s4.equals("") || s5.equals("") || s6.equals("") || s7.equals("") || s8.equals("")) {
+                    Toast.makeText(getApplicationContext(), "Field Empty", Toast.LENGTH_SHORT).show();
+                } else {
+                    try {
+                        MainActivity.sqliteHelper.updateDataDelivery(
+                                edtoderid.getText().toString().trim(),
+                                edtname.getText().toString().trim(),
+                                edtnumber.getText().toString().trim(),
+                                edtaddress.getText().toString().trim(),
+                                edtprice.getText().toString().trim(),
+                                edtdriverid.getText().toString().trim(),
+                                edtdrivername.getText().toString().trim(),
+                                edtcomplete.getText().toString().trim(),
+                                position
+                        );
+                        dialog.dismiss();
+                        Toast.makeText(getApplicationContext(), "Added successfully", Toast.LENGTH_SHORT).show();
+                    } catch (Exception error) {
+                        Log.e("Error", error.getMessage());
+                    }
+                    updateOngoingList();
                 }
-                updateOngoingList();
+
             }
         });
 
@@ -174,9 +183,7 @@ public class OngoingList extends AppCompatActivity {
                 }catch (Exception e){
                     Log.e("Error in delete",e.getMessage());
                 }
-
                 updateOngoingList();
-
             }
         });
         dialogDelete.setNegativeButton("Cancel" , new DialogInterface.OnClickListener() {

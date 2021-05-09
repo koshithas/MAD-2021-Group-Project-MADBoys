@@ -18,7 +18,7 @@ public class Driver_MainActivity extends AppCompatActivity {
     Button btnnewdriveradd,btnnewdriverslist;
 
     public static Driver_SQLiteHelper sqLiteHelper;
-
+    public static sqlhelper sqliteHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -24,6 +24,8 @@ public class Driver_OngoingList extends AppCompatActivity {
     GridView gridView;
     ArrayList<Driver_Ongoing> list;
     Driver_OngoingListAdapter adapter = null;
+    sqlhelper sqliteHelper;
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -128,32 +130,81 @@ public class Driver_OngoingList extends AppCompatActivity {
         dialog.getWindow().setLayout(width,height);
         dialog.show();
 
+
+        sqliteHelper = new sqlhelper(this, "FoodDB.sqlite",null, 1);
+        String driver_id = getIntent().getStringExtra("ID");
+
+//        Cursor cursor = Driver_MainActivity.sqliteHelper.getDriverDetails(driver_id);
+//
+//        while (cursor.moveToNext()){
+//            String driverid = cursor.getString(1);
+//            String name = cursor.getString(2);
+//            String number = cursor.getString(3);
+//            String address = cursor.getString(4);
+//            String email = cursor.getString(5);
+//            String model = cursor.getString(6);
+//            String Vnumber = cursor.getString(7);
+//            String dob = cursor.getString(8);
+//
+//
+//
+//            newdriverid.setText(driverid);
+//            newdrivername.setText(name);
+//            newdrivernumber.setText(number);
+//            newdriveraddress.setText(address);
+//            newdriveremail.setText(email);
+//            newdrivervehiclemodel.setText(model);
+//            newdrivervehiclenumber.setText(Vnumber);
+//            newdriverdob.setText(dob);
+//        }
+
+
+
+
+
+
+
+
+
         btnnewdriverupdated.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                try {
-                    MainActivity.sqliteHelper.updateDataDriver(
+                String s1 = newdriverid.getText().toString();
+                String s2 = newdrivername.getText().toString();
+                String s3 = newdrivernumber.getText().toString();
+                String s4 = newdriveraddress.getText().toString();
+                String s5 = newdriveremail.getText().toString();
+                String s6 = newdrivervehiclemodel.getText().toString();
+                String s7 = newdrivervehiclenumber.getText().toString();
+                String s8 = newdriverdob.getText().toString().trim();
 
+                if(s1.equals("")||s2.equals("")||s3.equals("")||s4.equals("")||s5.equals("")||s6.equals("")||s7.equals("")||s8.equals("")){
+                    Toast.makeText(getApplicationContext(), "Field Empty", Toast.LENGTH_SHORT).show();
+                }else{
+                    try {
+                        MainActivity.sqliteHelper.updateDataDriver(
+                                newdriverid.getText().toString().trim(),
+                                newdrivername.getText().toString().trim(),
+                                newdrivernumber.getText().toString().trim(),
+                                newdriveraddress.getText().toString().trim(),
+                                newdriveremail.getText().toString().trim(),
+                                newdrivervehiclemodel.getText().toString().trim(),
+                                newdrivervehiclenumber.getText().toString().trim(),
+                                newdriverdob.getText().toString().trim(),
+                                position
+                        );
+                        dialog.dismiss();
+                        Toast.makeText(getApplicationContext(),"Added successfully",Toast.LENGTH_SHORT).show();
+                    }catch (Exception error){
+                        Log.e("Error",error.getMessage());
+                    }
 
-                            newdriverid.getText().toString().trim(),
-                            newdrivername.getText().toString().trim(),
-                            newdrivernumber.getText().toString().trim(),
-                            newdriveraddress.getText().toString().trim(),
-                            newdriveremail.getText().toString().trim(),
-                            newdrivervehiclemodel.getText().toString().trim(),
-                            newdrivervehiclenumber.getText().toString().trim(),
-                            newdriverdob.getText().toString().trim(),
-                            position
-
-                    );
-
-                    dialog.dismiss();
-                    Toast.makeText(getApplicationContext(),"Added successfully",Toast.LENGTH_SHORT).show();
-                }catch (Exception error){
-                    Log.e("Error",error.getMessage());
+                    updateOngoingListDriver();
                 }
-                updateOngoingListDriver();
+
+
+
             }
         });
 

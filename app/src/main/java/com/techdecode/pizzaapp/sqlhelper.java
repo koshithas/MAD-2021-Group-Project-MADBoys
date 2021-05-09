@@ -385,6 +385,14 @@ public class sqlhelper extends SQLiteOpenHelper {
 
     }
 
+//    public Cursor getDriverDetails(String id){
+//
+//        SQLiteDatabase database = getReadableDatabase();
+//        return database.rawQuery("select * from DRIVERDETAILS where ID= ?",new String[]{id});
+//
+//
+//    }
+
     public Cursor getOrderIDList()
     {
         SQLiteDatabase database = getReadableDatabase();
