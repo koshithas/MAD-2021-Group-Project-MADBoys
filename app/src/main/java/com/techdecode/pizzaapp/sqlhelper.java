@@ -105,6 +105,7 @@ public class sqlhelper extends SQLiteOpenHelper {
         contentValues.put("email",email);
         contentValues.put("contact",contact);
         contentValues.put("password",password);
+
         long ins =db.insert("user",null,contentValues);
 
         if (ins == -1){
@@ -125,9 +126,11 @@ public class sqlhelper extends SQLiteOpenHelper {
         }
     }
 
+
     public boolean emailPassword(String username, String password){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("select * from user where username= ? and password= ?",new String[]{username,password});
+
 
         if (cursor.getCount()> 0){
             return true;
@@ -135,6 +138,8 @@ public class sqlhelper extends SQLiteOpenHelper {
             return false;
         }
     }
+
+
 
 
 
@@ -380,7 +385,10 @@ public class sqlhelper extends SQLiteOpenHelper {
 
     }
 
-
-
+    public Cursor getOrderIDList()
+    {
+        SQLiteDatabase database = getReadableDatabase();
+        return database.rawQuery("select OrderId from Orders",null);
+    }
 
 }

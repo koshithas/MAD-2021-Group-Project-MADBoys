@@ -51,11 +51,18 @@ public class register extends AppCompatActivity {
 
                 }else {
                     if (s4.equals(s5)){
+
                         Boolean checkUsername = db.checkUsername(s1);
+
                         if (checkUsername == true){
+
                             Boolean insert =db.insertUser(s1,s2,s3,s4);
+
                             if (insert == true){
+
                                 Toast.makeText(getApplicationContext(), "Added successfully", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(register.this, Login.class);
+                                startActivity(intent);
 
                             }
 
