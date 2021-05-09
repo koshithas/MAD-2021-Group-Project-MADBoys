@@ -1,48 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".OrderConfirmation">
 
 
-    <ScrollView
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="20dp">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="My Order "
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="35dp"
+        android:textStyle="bold" />
+
+
 
         <LinearLayout
-            android:layout_marginTop="40dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
-
+            android:padding="10dp"
+            android:background="@drawable/card_style_2"
             android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/sample_one"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/card_style"
+                android:layout_marginTop="10dp"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/order_confirm_image"
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="220dp"
-                    android:contentDescription="@string/food_description"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/sample01" />
+                    android:layout_height="230dp"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="20dp">
+
+                    <ImageView
+                        android:id="@+id/order_confirm_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="230dp"
+                        android:contentDescription="@string/food_description"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/sample01" />
+
+                </androidx.cardview.widget.CardView>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:paddingLeft="10dp"
                     android:paddingTop="15dp"
                     android:paddingRight="10dp"
@@ -50,33 +66,31 @@
 
                     <TextView
                         android:id="@+id/viewFoodName"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Cheese Burger"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="28dp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/viewFoodType"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:textAlignment="center"
                         android:text="@string/foodType"
-                        android:textAlignment="textEnd"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:textColor="@color/black"
+                        android:textSize="22dp"
+                      />
                 </LinearLayout>
             </LinearLayout>
-
-
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -127,16 +141,26 @@
                     android:text="Unit Price"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/lkr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Rs:"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/viewUnitPrice"
-                    android:layout_width="wrap_content"
+                    android:layout_width="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/o_subtotal_price"
                     android:textAlignment="viewEnd"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="20dp" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -154,42 +178,51 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/totalPriceView"
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Rs:"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/totalPriceView"
+                    android:layout_width="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/o_subtotal_price"
                     android:textAlignment="viewEnd"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="20dp" />
             </LinearLayout>
 
-            <Button
-                android:id="@+id/btn_confirmation"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="50dp"
-                android:backgroundTint="@color/dark_yellow"
-                android:text="@string/o_btn_confirm"
-                android:textAllCaps="false"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/order_confirm_food_Id"
-                android:layout_width="7dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="cursive"
-                android:text=""
-                android:textColor="@color/white"
-                android:textSize="25dp"
-                android:textStyle="bold" />
 
         </LinearLayout>
 
+    <Button
+        android:id="@+id/btn_confirmation"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/dark_yellow"
+        android:text="@string/o_btn_confirm"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
 
-    </ScrollView>
+    <TextView
+        android:id="@+id/order_confirm_food_Id"
+        android:layout_width="7dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="cursive"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold" />
 
-</RelativeLayout>
+
+</LinearLayout>
