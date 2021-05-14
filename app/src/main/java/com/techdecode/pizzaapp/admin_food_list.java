@@ -135,6 +135,9 @@ public class admin_food_list extends AppCompatActivity {
         Button update_btn = dialog.findViewById(R.id.update_btn);
 
 
+
+
+
         //set width for dialog
         int width = (int) (activity.getResources().getDisplayMetrics().widthPixels * 0.95);
 

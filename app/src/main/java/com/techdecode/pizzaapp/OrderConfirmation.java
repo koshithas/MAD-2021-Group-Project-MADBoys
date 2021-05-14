@@ -36,9 +36,6 @@ public class OrderConfirmation extends AppCompatActivity {
         String type = i.getStringExtra("foodNType");
         //startActivities(i);
 
-
-        ViewFoodName.setText(Name);
-        ViewFoodName.setText(Name);
         ViewFoodName.setText(Name);
         viewFoodType.setText(type);
         unitPrice.setText(price);

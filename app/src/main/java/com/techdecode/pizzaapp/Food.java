@@ -9,6 +9,11 @@ public class Food {
     private String description;
     private byte[] image;
 
+    public Food(){
+
+    }
+
+
     public Food(int id, String name, String price, String type, String description, byte[] image) {
         this.id = id;
         this.name = name;
