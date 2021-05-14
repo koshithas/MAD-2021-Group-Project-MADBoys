@@ -83,13 +83,10 @@ public class add_product extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-
                     String s1 = edtname.getText().toString();
                     String s2 = edtprice.getText().toString();
                     String s3 = edttype.getText().toString();
                     String s4 = edtdescription.getText().toString();
-
-
 
                     if (s1.equals("")||s2.equals("")||s3.equals("")||s4.equals("")) {
                         Toast.makeText(getApplicationContext(), "Field Empty", Toast.LENGTH_SHORT).show();

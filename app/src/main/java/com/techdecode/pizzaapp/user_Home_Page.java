@@ -16,6 +16,8 @@ import androidx.appcompat.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.techdecode.pizzaapp.Model.User;
+
 import java.util.ArrayList;
 
 public class user_Home_Page extends AppCompatActivity {
@@ -44,7 +46,8 @@ public class user_Home_Page extends AppCompatActivity {
 
         //get the user details to the user profile
 
-        String username = getIntent().getStringExtra("username1");
+       String username = getIntent().getStringExtra("username1");
+
 
 
         /*
@@ -89,10 +92,6 @@ public class user_Home_Page extends AppCompatActivity {
 
 
     }
-
-
-
-
 
 
 
@@ -148,7 +147,6 @@ public class user_Home_Page extends AppCompatActivity {
                Intent intent = new Intent(user_Home_Page.this, userProfile.class);
                 intent.putExtra("username1",username);
                startActivity(intent);
-
                 return true;
 
             case R.id.item2:
