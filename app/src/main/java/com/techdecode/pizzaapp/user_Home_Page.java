@@ -9,14 +9,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.GridView;
 import android.widget.ImageView;
 import androidx.appcompat.widget.SearchView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.techdecode.pizzaapp.Model.User;
 
 import java.util.ArrayList;
 
