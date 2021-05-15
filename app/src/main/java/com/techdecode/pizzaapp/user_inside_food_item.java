@@ -62,7 +62,7 @@ public class user_inside_food_item extends AppCompatActivity {
                 i.putExtra("foodPrice", price);
                 i.putExtra("foodNType", type);
                 i.putExtra("foodImage",byteArray);
-                i.putExtra("Id",id);
+                i.putExtra("id",id);
 
 
                 startActivity(i);

@@ -27,7 +27,7 @@ public class InsertPayment extends AppCompatActivity {
 
     EditText cardName,cardNumber,exp,security;
     Button confirm;
-    TextView name,name2;
+    TextView name,name2,name3;
     AwesomeValidation awesomevalidation;
 
     public static sqlhelper sqliteHelper;
@@ -45,15 +45,17 @@ public class InsertPayment extends AppCompatActivity {
         sqlhelper obj = new sqlhelper(this, "FoodDB.sqlite",null, 1);
 
         init();
-        String cardOnName = cardName.getText().toString();
+
         Intent i = getIntent();
 
         String Name= i.getStringExtra("foodName2");
-        String price =i.getStringExtra("foodPrice2");
+        String price =i.getStringExtra("unitP");
         String type = i.getStringExtra("foodType2");
         String qty = i.getStringExtra("qty1");
-        name.setText(Name);
+        String foodId = i.getStringExtra("id");
+        name.setText(foodId);
         name2.setText(qty);
+        name3.setText(price);
         //style
         awesomevalidation = new AwesomeValidation(ValidationStyle.BASIC);
         awesomevalidation.addValidation(this, R.id.cardOnName, RegexTemplate.NOT_EMPTY,R.string.invalid_card_name);
@@ -64,7 +66,7 @@ public class InsertPayment extends AppCompatActivity {
 
         try {
             deliveryModel = (DeliveryDetailsModel) i.getSerializableExtra("MyClass");
-            foodDetailsModel = (FoodDetailsModel) i.getSerializableExtra("abc");
+            foodDetailsModel = (FoodDetailsModel) i.getSerializableExtra("qty");
 
         }
         catch (Exception e){
@@ -85,6 +87,7 @@ public class InsertPayment extends AppCompatActivity {
         confirm =findViewById(R.id.pConfirm);
         name = findViewById(R.id.empty2);
         name2 = findViewById(R.id.empty1);
+        name3 = findViewById(R.id.empty3);
 
     }
 
@@ -94,14 +97,15 @@ public class InsertPayment extends AppCompatActivity {
 
        sqlhelper obj = new sqlhelper(this, "FoodDB.sqlite",null, 1);
 
-        obj.queryData("CREATE TABLE IF NOT EXISTS Orders (orderId INTEGER PRIMARY KEY AUTOINCREMENT, firstName text, lastName text, email text, contactNumber INTEGER, address text, cardName text, cardNumber text, expDate text, securityCode text, productId text, qty text, date text)");
+        obj.queryData("CREATE TABLE IF NOT EXISTS Orders (orderId INTEGER PRIMARY KEY AUTOINCREMENT, firstName text, lastName text, email text, contactNumber INTEGER, address text, cardName text, cardNumber text, expDate text, securityCode text, productId text, qty text,uPrice text, date text)");
 
 
 
         if( obj.insertData(deliveryModel.getfName(),deliveryModel.getlName(),
                 deliveryModel.getEmail(),deliveryModel.getContact(),deliveryModel.getAddress(),
                 cardName.getText().toString(),cardNumber.getText().toString(),exp.getText().toString(),security.getText().toString(),
-                name.getText().toString(),name2.getText().toString(),getDateTime())){
+                name.getText().toString(),name2.getText().toString(), name3.getText().toString(),getDateTime())){
+
 
             Toast.makeText(getApplicationContext(), "Order Added Successfully...", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(InsertPayment.this,user_Home_Page.class);

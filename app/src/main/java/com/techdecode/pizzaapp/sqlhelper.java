@@ -192,7 +192,7 @@ public class sqlhelper extends SQLiteOpenHelper {
 
     public Boolean insertData(String firstName,String lastName,String email,String contactNumber,
                               String address,String cardName,String cardNumber,String expDate,
-                              String securityCode,String productId,String qty,String date) {
+                              String securityCode,String productId,String qty,String uPrice,String date) {
         SQLiteDatabase db = this.getWritableDatabase();
         //for our values
         ContentValues contentValues = new ContentValues();
@@ -207,6 +207,7 @@ public class sqlhelper extends SQLiteOpenHelper {
         contentValues.put("securityCode", securityCode);
         contentValues.put("productId", productId);
         contentValues.put("qty", qty);
+        contentValues.put("uPrice", uPrice);
         contentValues.put("date", date);
 
         long results = db.insert("Orders", null,contentValues);

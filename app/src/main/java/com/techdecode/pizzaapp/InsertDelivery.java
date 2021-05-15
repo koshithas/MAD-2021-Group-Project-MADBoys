@@ -22,7 +22,7 @@ public class InsertDelivery extends AppCompatActivity {
     Button confirm,back;
     EditText fName,lName,email,contact,address;
     TextView name;
-
+    FoodDetailsModel foodDetailsModel;
     AwesomeValidation awesomevalidation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +33,11 @@ public class InsertDelivery extends AppCompatActivity {
 
         Intent i = getIntent();
         String name= i.getStringExtra("foodName1");
-        String price =i.getStringExtra("foodPrice1");
+        String price =i.getStringExtra("unitP");
         String type = i.getStringExtra("foodType1");
-        String qty = i.getStringExtra("qty");
+         String qty = i.getStringExtra("qty");
+         String productId = i.getStringExtra("id");
+      //  foodDetailsModel = (FoodDetailsModel) i.getSerializableExtra("qty");
 
         //style
         awesomevalidation = new AwesomeValidation(ValidationStyle.BASIC);
@@ -69,10 +71,13 @@ public class InsertDelivery extends AppCompatActivity {
                     Intent i = new Intent(InsertDelivery.this, InsertPayment.class);
 
                     i.putExtra("MyClass", (Serializable) obj);
+                   // i.putExtra("qty", (Serializable) model);
+
                     i.putExtra("foodName2", name);
-                    i.putExtra("foodPrice2", price);
+                    i.putExtra("unitP", price);
                     i.putExtra("foodType2", type);
                     i.putExtra("qty1",qty);
+                    i.putExtra("id",productId);
 
 
                     startActivity(i);
